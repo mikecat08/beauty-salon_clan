@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <meta name="format-detection" content="telephone=no,email=no,address=no">
+  <title>CLAN -ヘアサロン クラン- 大分/府内町の美容室</title>
+  <meta name="description" content="テストテストテストテスト">
+
+  <!-- ファビコンの読み込み -->
+  <link rel="icon" href="/common/img/favicon.ico">
+
+  <!-- Googleフォントの読み込み -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300&display=swap" rel="stylesheet">
+  <!-- Googleフォントの読み込みはここまで -->
+
+  <!-- CSSの読み込み -->
+  <link rel="stylesheet" type="text/css" href="/common/css/all.css">
+  <link rel="stylesheet" type="text/css" href="/css/top.css">
+  <!-- CSSの読み込みはここまで -->
+
+</head>
+
+<body>
+
+  <!--#include virtual="/common/inc/header.html" -->
+
+  <!-- ドロップダウン展開時の背景デザイン用要素 -->
+  <div id="bg" class="bg"></div>
+
+  <!-- 背景の動画に重ねて動画の色を少し暗くし全体に馴染ませる層 -->
+  <div class="video_layer"></div>
+
+  <!-- 背景の動画 -->
+  <div class="video_wrapper">
+    <video src="/img/clan__mv_test.mp4" class="bg-video" id="bg-video" playsinline autoplay muted loop></video>
+  </div>
+
+  <!-- メインコンテンツ -->
+  <main class="main" id="top">
+
+    <!-- メインビジュアル -->
+    <div class="main-visual">
+      <div class="mv_inner">
+        <h1 class="main-logo img_wrapper">
+          <img src="/common/img/logo.png" class="main-logo_img" alt="CLANのロゴ">
+        </h1>
+
+        <!-- スクロールを示唆するリンクテキストとアニメーション -->
+        <a href="#concept" class="button-scroll">
+          <span class="scroll-txt">Scroll Down</span>
+          <span class="line"></span>
+        </a>
+        <!-- スクロールを示唆するリンクテキストとアニメーションはここまで -->
+
+      </div>
+    </div>
+    <!-- メインビジュアルはここまで -->
+
+    <!-- コンセプトセクション -->
+    <section class="concept section_wrapper" id="concept">
+      <div class="section_inner">
+        <div class="section_bg">
+          <div class="contents-area">
+            <h2 class="section-ttl">
+              ここに英語の見出しが入る想定
+            </h2>
+            <p class="normal-txt">
+              仮テキスト仮テキスト仮テキスト仮テキスト<br>
+              仮テキスト仮テキスト仮テキスト仮テキスト
+            </p>
+            <p class="normal-txt">
+              仮テキスト仮テキスト仮テキスト仮テキスト<br>
+              仮テキスト仮テキスト仮テキスト仮テキスト
+            </p>
+            <p class="normal-txt">
+              仮テキスト仮テキスト仮テキスト仮テキスト<br>
+              仮テキスト仮テキスト仮テキスト仮テキスト
+            </p>
+            <p class="normal-txt">
+              仮テキスト仮テキスト仮テキスト仮テキスト
+            </p>
+            <p class="normal-txt">
+              仮テキスト仮テキスト仮テキスト仮テキスト
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- コンセプトセクションはここまで -->
+
+  </main>
+  <!-- メインコンテンツはここまで -->
+
+  <!--#include virtual="/common/inc/footer.html" -->
+
+  <!-- jQueryのCDN読み込み（js） -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- 共通のjs読み込み -->
+  <script src="/common/js/script.min.js"></script>
+
+  <!-- TOPページのjs読み込み -->
+  <script src="/js/script.min.js"></script>
+</body>
+
+</html>

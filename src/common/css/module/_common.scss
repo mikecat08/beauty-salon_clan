@@ -1,0 +1,160 @@
+//=====================================
+// 全てのページに共通する項目
+//=====================================
+
+//全ての要素のbox-sizingの値を親要素から継承する
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 62.5%;
+
+  //html要素のbox-sizingの値はboerder-boxを指定
+  box-sizing: border-box;
+}
+
+body{
+  font-size: 1.6rem;
+  color: $main-txt__color;
+  line-height: 1.3;
+}
+
+//横並び左揃えにします
+.flex_wrapper {
+  display: flex;
+}
+
+//SP表示では縦に並びます
+.column__sp {
+  @include sp {
+    flex-direction: column;
+  }
+}
+
+.img_wrapper {
+  text-align: center;
+  img {
+    width: 100%;
+    vertical-align: top;
+  }
+}
+
+//SP版のみ改行
+.br__sp {
+  display: none;
+  @include sp {
+    display: block;
+  }
+}
+
+//PC版のみ改行
+.br_pc {
+  @include sp {
+    display: none;
+  }
+}
+
+.sp_only {
+  @include pc {
+    display: none;
+  }
+}
+
+.pc_only {
+  @include sp {
+    display: none;
+  }
+}
+
+//セクションインナーのデザイン
+.section-inner {
+  max-width: 1160px;
+  min-width: 1080px;
+  padding: 0 30px;
+  margin: 90px auto 0;
+  @include sp {
+    min-width: 100%;
+    padding: 0 15px;
+    margin-top: 60px;
+  }
+}
+
+//ドロップダウンを示す下矢印のデザイン
+.icon_bottomArrow_gray {
+  position: relative;
+  padding-right: 18px;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 11px;
+    height: 6px;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    background: center / contain no-repeat url(/common/img/icon_bottomArrow_gray.png);
+  }
+}
+
+//SP版ヘッダーリンクの右方向矢印のデザイン
+.icon_rightArrow {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 5px;
+    height: 9px;
+    background: url(/common/img/icon_rightArrow_pink.png) center/contain no-repeat;
+  }
+}
+
+//SP版ヘッダーリンクの下方向矢印のデザイン
+.icon_bottomArrow {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 15px;
+    height: 8px;
+    background: url(/common/img/icon_bottomArrow_pink.png) center/contain no-repeat;
+  }
+}
+
+//上方向に浮かび上がる動きをする対象の初期状態を指定しています。
+.fadeup-target {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+//jsによって、in-viewというクラスが付与されたタイミングで発火します。
+//上方向に浮かび上がる動きを指定しています。
+.fadeup-target.in-view {
+  animation: translateY_up_animation 1s ease forwards, opacity_animation 1s ease 0.1s forwards;
+  -webkit-animation: translateY_up_animation 1s ease forwards, opacity_animation 1s ease 0.1s forwards;
+}
+
+//上方向に浮かび上がる動きの内、0.2秒遅れて浮かび上がるものを指定しています。
+.fadeup-target.in-view.delay-2 {
+  animation: translateY_up_animation 1s ease 0.2s forwards, opacity_animation 1s ease 0.3s forwards;
+  -webkit-animation: translateY_up_animation 1s ease 0.2s forwards, opacity_animation 1s ease 0.3s forwards;
+}
+
+//上方向に浮かび上がる動きの内、0.3秒遅れて浮かび上がるものを指定しています。
+.fadeup-target.in-view.delay-3 {
+  animation: translateY_up_animation 1s ease 0.3s forwards, opacity_animation 1s ease 0.3s forwards;
+  -webkit-animation: translateY_up_animation 1s ease 0.3s forwards, opacity_animation 1s ease 0.3s forwards;
+}
+
+//上方向に浮かび上がる動きの内、0.4秒遅れて浮かび上がるものを指定しています。
+.fadeup-target.in-view.delay-4 {
+  animation: translateY_up_animation 1s ease 0.3s forwards, opacity_animation 1s ease 0.3s forwards;
+  -webkit-animation: translateY_up_animation 1s ease 0.3s forwards, opacity_animation 1s ease 0.3s forwards;
+}

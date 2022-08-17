@@ -1,0 +1,166 @@
+//=====================================
+// pcヘッダーのスタイル
+//=====================================
+.pc-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $bg__color;
+  z-index: 5;
+  @include sp {
+    display: none;
+  }
+
+  .header_inner {
+    height: 65px;
+    margin-left: 30px;
+    align-items: center;
+    justify-content: space-between;
+    
+    //ヘッダーロゴ
+    .header-logo_wrapper {
+      width: 70px;
+      .link {
+        display: block;
+        height: 100%;
+      }
+    }
+    //ヘッダーロゴはここまで
+
+    //ヘッダーナビ
+    .header-nav_container {
+      height: 100%;
+      align-items: center;
+
+      // ナビリスト
+      .header-nav-list {
+        margin-right: 30px;
+
+        .header-nav-list-item {
+          
+          &:not(:last-child) {
+            &::after {
+              content: '/';
+              display: inline-block;
+              margin: 0 10px;
+            }
+          }
+        }
+      }
+      // ナビリストはここまで
+
+      // ヘッダーボタン
+      .btn_container {
+        height: 100%;
+  
+        .reserve-btn {
+          .link {
+            display: flex;
+            width: 90px;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            background-color: $reserve-btn__color;
+            color: $accent-txt__color;
+          }
+        }
+  
+        .instagram-btn {
+          .link {
+            display: flex;
+            width: 65px;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            background-color: $instagram-btn__color;
+  
+            .instagram-logo {
+              width: 24px;
+              height: 24px;
+            }
+          }
+        }
+      }
+      // ヘッダーボタンはここまで
+
+    }
+    //ヘッダーナビリストはここまで
+
+  }
+}
+
+//=====================================
+// spヘッダーのスタイル
+//=====================================
+.sp-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $bg__color;
+  z-index: 5;
+  @include pc {
+    display: none;
+  }
+
+  .header_inner {
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+
+    //ハンバーガーボタン
+    .burger-btn_container {
+      width: 50px;
+      height: 50px;
+      background-color: $instagram-btn__color;
+      
+      .burger-btn {
+        padding: 12px;
+        position: relative;
+
+        .bar {
+          display: block;
+          width: 100%;
+          height: 2px;
+          background-color: $bg__color;
+          position: absolute;
+
+          &.bar_top {
+            top: 0;
+            left: 0;
+          }
+
+          &.bar_middle {
+            top: 12px;
+            left: 0;
+          }
+
+          &.bar_bottom {
+            bottom: 0;
+            left: 0;
+          }
+        }
+      }
+    }
+    //ハンバーガーボタンはここまで
+
+    //ヘッダーロゴ
+    .header-logo_wrapper {
+      width: 48px;
+      .link {
+        display: block;
+        height: 100%;
+      }
+    }
+    //ヘッダーロゴはここまで
+
+    
+
+    //ハンバーガーメニュー
+    .burger-menu {
+      display: none;
+    }
+    //ハンバーガーメニューはここまで
+  }
+}

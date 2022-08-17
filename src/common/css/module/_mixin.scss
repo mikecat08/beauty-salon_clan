@@ -1,0 +1,22 @@
+
+// ==============================
+// レスポンシブデザイン関係
+// ==============================
+
+//ブレイクポイントの設定
+$breakpoint-sp:'900px';
+$breakpoint-pc:'901px';
+
+//SPデザイン指定用のミキシン
+@mixin sp {
+  @media screen and (max-width:$breakpoint-sp) {
+    @content;
+  }
+}
+
+//PCデザイン指定用のミキシン
+@mixin pc {
+  @media screen and (min-width:$breakpoint-pc) {
+    @content;
+  }
+}
