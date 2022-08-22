@@ -1,3 +1,6 @@
+@use 'variables';
+@use 'mixin';
+
 //=====================================
 // pcヘッダーのスタイル
 //=====================================
@@ -6,9 +9,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: $bg__color;
+  background-color: variables.$bg__color;
   z-index: 5;
-  @include sp {
+  @include mixin.sp {
     display: none;
   }
 
@@ -18,7 +21,7 @@
     align-items: center;
     justify-content: space-between;
     
-    //ヘッダーロゴ
+    // ヘッダーロゴ
     .header-logo_wrapper {
       width: 70px;
       .link {
@@ -26,9 +29,9 @@
         height: 100%;
       }
     }
-    //ヘッダーロゴはここまで
+    // ヘッダーロゴはここまで
 
-    //ヘッダーナビ
+    // ヘッダーナビ
     .header-nav_container {
       height: 100%;
       align-items: center;
@@ -61,8 +64,8 @@
             height: 100%;
             justify-content: center;
             align-items: center;
-            background-color: $reserve-btn__color;
-            color: $accent-txt__color;
+            background-color: variables.$reserve-btn__color;
+            color: variables.$accent-txt__color;
           }
         }
   
@@ -73,7 +76,7 @@
             height: 100%;
             justify-content: center;
             align-items: center;
-            background-color: $instagram-btn__color;
+            background-color: variables.$instagram-btn__color;
   
             .instagram-logo {
               width: 24px;
@@ -85,7 +88,7 @@
       // ヘッダーボタンはここまで
 
     }
-    //ヘッダーナビリストはここまで
+    // ヘッダーナビリストはここまで
 
   }
 }
@@ -98,32 +101,35 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: $bg__color;
+  background-color: variables.$bg__color;
   z-index: 5;
-  @include pc {
+  @include mixin.pc {
     display: none;
   }
 
   .header_inner {
-    height: 50px;
+    height: 60px;
     align-items: center;
     justify-content: space-between;
 
-    //ハンバーガーボタン
+    // ハンバーガーボタン
     .burger-btn_container {
-      width: 50px;
-      height: 50px;
-      background-color: $instagram-btn__color;
+      width: 60px;
+      height: 100%;
+      padding: 12px;
+      flex-shrink: 0;
+      margin-left: 8px;
+      cursor: pointer;
       
       .burger-btn {
-        padding: 12px;
+        height: 100%;
         position: relative;
 
         .bar {
           display: block;
           width: 100%;
           height: 2px;
-          background-color: $bg__color;
+          background-color: variables.$instagram-btn__color;
           position: absolute;
 
           &.bar_top {
@@ -132,20 +138,29 @@
           }
 
           &.bar_middle {
-            top: 12px;
+            top: 8px;
             left: 0;
           }
 
           &.bar_bottom {
-            bottom: 0;
+            bottom: 18px;
             left: 0;
           }
         }
+
+        .burger-btn_txt {
+          width: 100%;
+          text-align: center;
+          font-size: 0.4rem;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        }
       }
     }
-    //ハンバーガーボタンはここまで
+    // ハンバーガーボタンはここまで
 
-    //ヘッダーロゴ
+    // ヘッダーロゴ
     .header-logo_wrapper {
       width: 48px;
       .link {
@@ -153,14 +168,87 @@
         height: 100%;
       }
     }
-    //ヘッダーロゴはここまで
+    // ヘッダーロゴはここまで
 
-    
+    // 予約ボタン
+    .reserve-btn_wrapper {
+      padding: 0 10px;
+      background-color: variables.$reserve-btn__color;
+      height: 100%;
+      display: flex;
+      cursor: pointer;
 
-    //ハンバーガーメニュー
-    .burger-menu {
-      display: none;
+      .reserve-btn {
+        color: variables.$accent-txt__color;
+        align-items: center;
+      }
     }
-    //ハンバーガーメニューはここまで
+    // 予約ボタンはここまで
+
   }
+
+  // ハンバーガーメニュー
+  .burger-menu {
+    .burger-menu_inner {
+      padding: 0 20px;
+
+      // ナビリスト
+      .burger-menu_list {
+        .burger-menu_list-item {
+          margin-top: 25px;
+          border-bottom: 1px solid variables.$thin-border__color;
+          padding-bottom: 8px;
+          &:first-child {
+            margin-top: 45px;
+          }
+        }
+      }
+      // ナビリストはここまで
+
+      .sns_wrapper {
+        margin: 30px 0 35px;
+
+        .lead-txt {
+          text-align: center;
+        }
+
+        .sns-icon_list {
+          margin: 30px 0;
+          justify-content: center;
+
+          .sns-icon_list-item {
+            width: 40px;
+            height: 40px;
+            &:first-child {
+              margin-right: 20px;
+            }
+
+            &.line-icon {
+              background-color: variables.$line-bland__color;
+            }
+
+            &.instagram-icon {
+              background-color: variables.$instagram-bland__color;
+
+              .link {
+                display: flex;
+                height: 100%;
+                flex-shrink: 0;
+                align-items: center;
+                justify-content: center;
+
+                .img_wrapper {
+                  width: 28px;
+                  align-items: center;
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+  // ハンバーガーメニューはここまで
+
 }

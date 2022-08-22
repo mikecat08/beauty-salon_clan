@@ -1,7 +1,7 @@
 //分割代入をして gulp.hoge()と書かずにhoge()と書ける
 const {src, dest, task, watch, series, parallel} = require("gulp");
 
-const sass = require("gulp-sass");
+const sass = require("gulp-dart-sass");
 const autoprefixer = require("gulp-autoprefixer");
 const browserSync = require("browser-sync").create();
 const plumber = require("gulp-plumber");

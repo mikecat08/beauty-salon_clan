@@ -1,7 +1,4 @@
-@import 'module/reset';
-@import 'module/variables';
-@import 'module/mixin';
-@import 'module/keyframe';
-@import 'module/common';
-@import 'module/header';
-@import 'module/footer';
+@use 'module/reset';
+@use 'module/common';
+@use 'module/header';
+@use 'module/footer';

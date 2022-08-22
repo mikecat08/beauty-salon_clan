@@ -1,3 +1,6 @@
+@use '../common/css/module/mixin';
+@use '../common/css/module/variables';
+
 //===============================
 //トップページのスタイルシート
 //===============================
@@ -46,6 +49,9 @@
     width: 96.87%;
     height: calc(100vh - 60px);
     margin: 0 auto;
+    @include mixin.sp {
+      height: calc(100vh - 100px);
+    }
 
     .mv_inner {
       .main-logo {
