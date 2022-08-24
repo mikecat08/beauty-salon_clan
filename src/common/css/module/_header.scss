@@ -10,7 +10,7 @@
   left: 0;
   width: 100%;
   background-color: variables.$bg__color;
-  z-index: 5;
+  z-index: 10;
   @include mixin.sp {
     display: none;
   }
@@ -102,7 +102,7 @@
   left: 0;
   width: 100%;
   background-color: variables.$bg__color;
-  z-index: 5;
+  z-index: 10;
   @include mixin.pc {
     display: none;
   }
@@ -189,6 +189,8 @@
 
   // ハンバーガーメニュー
   .burger-menu {
+    display: none;
+
     .burger-menu_inner {
       padding: 0 20px;
 
@@ -205,6 +207,7 @@
       }
       // ナビリストはここまで
 
+      // SNSエリア
       .sns_wrapper {
         margin: 30px 0 35px;
 
@@ -246,6 +249,20 @@
           }
         }
       }
+      // SNSエリアはここまで
+
+      //予約ボタン
+      .reserve_wrapper {
+        .reserve-btn_wrapper {
+          background-color: variables.$reserve-btn__color;
+          width: 100px;
+
+          .reserve-btn {
+
+          }
+        }
+      }
+      // 予約ボタンはここまで
 
     }
   }

@@ -35,61 +35,8 @@ $(function () {
     }
   });
 
-  //SP版
-  //何度も指定するので検索窓の指定を変数に格納します。
-  var $searchInputSp = $('#search-input_sp');
 
-  //虫眼鏡ボタンをクリックした時の動作
-  $('#sp-search').on('click', function () {
-
-    //検索窓がopenというクラスを持っている場合
-    if ($searchInputSp.hasClass('opened')) {
-
-      //openというクラスを無くして検索窓を非表示にします。
-      $searchInputSp.removeClass('opened');
-      $searchInputSp.slideUp();
-
-      //検索窓がopenというクラスを持っていない場合
-    } else {
-
-      //openというクラスを付与して検索窓を表示します。
-      $searchInputSp.addClass('opened');
-      $searchInputSp.slideDown();
-    }
-  });
-
-
-  //=====================================
-  //グローバルナビ開閉の動き
-  //=====================================
-
-  //グローバルナビにカーソルが当たった際に、下記の処理が行われます。
-  $('.js-dropdown-pc').hover(function () {
-
-    //検索窓が閉じている場合にだけ動くようにします。
-    if ($searchInput.hasClass('closed')) {
-      //ホバーされたグローバルナビの子要素であるドロップダウンメニューを表示します。
-      $(this).find('.js-dropdown-menu').stop().slideDown();
-      //.stop()のメソッドを入れないとドロップダウンメニューの動きが止まらずにずっと上下し続ける時があります。
-
-      //背景を暗くする目的で、bgというidを持つ要素にactiveというクラスを付与します。
-      $('#bg').addClass('active');
-    }
-  });
-
-  //グローバルナビのドロップダウンメニューからカーソルが離れた際に、下記の処理が行われます。
-  $('.js-dropdown-pc').mouseleave(function () {
-
-    //検索窓が閉じている場合にだけ動くようにします。
-    if ($searchInput.hasClass('closed')) {
-      //カーソルが離れたグローバルナビの子要素であるドロップダウンメニューが非表示になります。
-      $(this).find('.js-dropdown-menu').stop().slideUp();
-      //.stop()のメソッドを入れないとドロップダウンメニューの動きが止まらずにずっと上下し続ける時があります。
-
-      //暗くなっている背景を元に戻す目的で、bgというidを持つ要素からactiveというクラスを取り除きます。
-      $('#bg').removeClass('active');
-    }
-  });
+  
 
 
   //=====================================
@@ -124,31 +71,35 @@ $(function () {
 //=====================================
 
 //何度も指定するので検索窓の指定を変数に格納します。
-var $burgerMenu = $('#header-menu');
+var $burgerMenu = $('#burger-menu');
 var $burgerBtn = $('#burger-btn');
 
 //ハンバーガーボタンをクリックした時の動作
 $burgerBtn.on('click', function () {
 
-  //ハンバーガーボタンがactiveというクラスを持っている場合
-  if ($burgerBtn.hasClass('active')) {
+  //ハンバーガーボタンがopenedというクラスを持っている場合
+  if ($burgerBtn.hasClass('opened')) {
 
-    //ハンバーガーボタンからactiveというクラスを無くします。
-    $burgerBtn.removeClass('active');
+    //ハンバーガーボタンからopenedというクラスを無くします。
+    $burgerBtn.removeClass('opened');
     //アコーディオンメニューをスライドアップで非表示にします。
     $burgerMenu.slideUp();
-    //検索アイコンの不透明度を1にします。
-    $('#sp-search').css('opacity', '1');
+    //予約ボタンの不透明度を1にします。
+    $('#reserve-btn').css('opacity', '1');
+    //暗くなっている背景を元に戻す目的で、bgというidを持つ要素からactiveというクラスを取り除きます。
+    $('#bg').removeClass('active');
 
-    //ハンバーガーボタンがactiveというクラスを持っていない場合
+    //ハンバーガーボタンがopenedというクラスを持っていない場合
   } else {
 
-    //ハンバーガーボタンにactiveというクラスを付与します。
-    $burgerBtn.addClass('active');
+    //ハンバーガーボタンにopenedというクラスを付与します。
+    $burgerBtn.addClass('opened');
     //ハンバーガーメニューをスライドダウンで表示させます。
     $burgerMenu.slideDown();
-    //検索アイコンの不透明度を0にします。
-    $('#sp-search').css('opacity', '0');
+    //予約ボタンの不透明度を0にします。
+    $('#reserve-btn').css('opacity', '0');
+    //背景を暗くする目的で、bgというidを持つ要素にactiveというクラスを付与します。
+    $('#bg').addClass('active');
   }
 });
 
