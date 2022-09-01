@@ -1,0 +1,47 @@
+@use '../../common/css/module/mixin';
+@use '../../common/css/module/variables';
+
+//===============================
+//予約ページのスタイルシート
+//===============================
+
+//背景の動画に重ねて動画の色を少し暗くし全体に馴染ませる層
+.video_layer {
+  display: none;
+  background: rgba(0, 0, 0, 0.1);
+  width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bg_wrapper {
+  width: 100%;
+  position: fixed;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  background-color: #000;
+  pointer-events: none;
+  @include mixin.sp {
+    height: 100vh;
+  }
+
+  img {
+    @include mixin.sp {
+      height: 100%;
+      width: auto;
+    }
+  }
+}
+
+.main {
+  .mod__h1-ttl {
+    margin-top: 80px;
+    font-size: 3rem;
+  }
+}

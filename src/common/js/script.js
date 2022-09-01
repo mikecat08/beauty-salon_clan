@@ -20,7 +20,7 @@ $(function () {
       $searchInput.slideUp();
 
       //暗くなっている背景を元に戻す目的で、bgというidを持つ要素からactiveというクラスを取り除きます。
-      $('#bg').removeClass('active');
+      $('#dark-mask').removeClass('active');
 
       //検索窓がopenedというクラスを持っていない場合
     } else {
@@ -31,7 +31,7 @@ $(function () {
       $searchInput.slideDown();
 
       //背景を暗くする目的で、bgというidを持つ要素にactiveというクラスを付与します。
-      $('#bg').addClass('active');
+      $('#dark-mask').addClass('active');
     }
   });
 

@@ -34,11 +34,13 @@
 
   <!-- 背景の動画 -->
   <div class="video_wrapper">
-    <video src="/img/clan__mv_test.mp4" class="bg-video" id="bg-video" playsinline autoplay muted loop></video>
+    <div class="video_container">
+      <video src="/img/clan__mv_test.mp4" class="bg-video" id="bg-video" playsinline autoplay muted loop></video>
+    </div>
   </div>
 
   <!-- ドロップダウン展開時の背景デザイン用要素 -->
-  <div id="bg" class="bg"></div>
+  <div id="dark-mask" class="dark-mask"></div>
 
   <!-- メインコンテンツ -->
   <main class="main" id="top">
@@ -47,7 +49,7 @@
     <div class="main-visual">
       <div class="mv_inner">
         <h1 class="main-logo img_wrapper">
-          <img src="/common/img/logo.png" class="main-logo_img" alt="CLANのロゴ">
+          <img src="/common/img/logo_white.png" class="main-logo_img" alt="CLANのロゴ">
         </h1>
 
         <!-- スクロールを示唆するリンクテキストとアニメーション -->

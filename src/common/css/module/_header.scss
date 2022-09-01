@@ -207,13 +207,26 @@
       }
       // ナビリストはここまで
 
+      //予約ボタン
+      .reserve_wrapper {
+        margin-top: 30px;
+
+        .reserve-btn_wrapper {
+          background-color: variables.$reserve-btn__color;
+          width: 100px;
+          margin: 0 auto;
+          text-align: center;
+
+          .reserve-btn {
+            
+          }
+        }
+      }
+      // 予約ボタンはここまで
+
       // SNSエリア
       .sns_wrapper {
         margin: 30px 0 35px;
-
-        .lead-txt {
-          text-align: center;
-        }
 
         .sns-icon_list {
           margin: 30px 0;
@@ -250,19 +263,6 @@
         }
       }
       // SNSエリアはここまで
-
-      //予約ボタン
-      .reserve_wrapper {
-        .reserve-btn_wrapper {
-          background-color: variables.$reserve-btn__color;
-          width: 100px;
-
-          .reserve-btn {
-
-          }
-        }
-      }
-      // 予約ボタンはここまで
 
     }
   }

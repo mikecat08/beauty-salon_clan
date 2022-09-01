@@ -99,7 +99,7 @@
 
     <!-- 予約ボタン -->
     <div class="reserve-btn_wrapper" id="reserve-btn">
-      <button class="reserve-btn">
+      <button class="reserve-btn" type=“button” onclick="location.href='/reservation/'">
         ご予約
       </button>
     </div>
@@ -143,12 +143,16 @@
       </ul>
       <!-- ナビリストはここまで -->
 
+      <div class="reserve_wrapper">
+        <div class="reserve-btn_wrapper" id="reserve-btn">
+          <button class="reserve-btn">
+            ご予約
+          </button>
+        </div>
+      </div>
+
       <!-- SNSエリア -->
       <div class="sns_wrapper">
-        <p class="lead-txt">
-          LINE・Instagramからご予約いただけます。
-        </p>
-
         <ul class="sns-icon_list flex_wrapper">
           <li class="sns-icon_list-item line-icon">
             <a href="#" class="link">
@@ -167,14 +171,6 @@
         </ul>
       </div>
       <!-- SNSエリアはここまで -->
-
-      <div class="reserve_wrapper">
-        <div class="reserve-btn_wrapper" id="reserve-btn">
-          <button class="reserve-btn">
-            ご予約
-          </button>
-        </div>
-      </div>
 
     </nav>
   </div>
