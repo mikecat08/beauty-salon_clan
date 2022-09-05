@@ -1,8 +1,7 @@
-
 <!-- PCのヘッダー -->
 <header class="pc-header">
   <div class="header_inner flex_wrapper">
-    
+
     <!-- ヘッダーロゴ -->
     <div class="header-logo_wrapper">
       <a href="/" class="img_wrapper link">
@@ -45,26 +44,26 @@
       <!-- ナビリストはここまで -->
 
       <!-- ヘッダーボタン -->
-    <div class="btn_container flex_wrapper">
-      
-      <!-- 予約ボタン -->
-      <div class="reserve-btn">
-        <a href="#" class="link">
-          ご予約
-        </a>
-      </div>
-      <!-- 予約ボタンはここまで -->
+      <div class="btn_container flex_wrapper">
 
-      <!-- インスタボタン -->
-      <div class="instagram-btn">
-        <a href="#" class="link img_wrapper">
-          <img src="/common/img/icon-instagram.png" class="instagram-logo" alt="インスタのロゴ">
-        </a>
-      </div>
-      <!-- インスタボタンはここまで -->
+        <!-- 予約ボタン -->
+        <div class="reserve-btn">
+          <a href="/reservation/" class="link">
+            ご予約
+          </a>
+        </div>
+        <!-- 予約ボタンはここまで -->
 
-    </div>
-    <!-- ヘッダーボタンはここまで -->
+        <!-- インスタボタン -->
+        <div class="instagram-btn">
+          <a href="#" class="link img_wrapper">
+            <img src="/common/img/icon-instagram.png" class="instagram-logo" alt="インスタのロゴ">
+          </a>
+        </div>
+        <!-- インスタボタンはここまで -->
+
+      </div>
+      <!-- ヘッダーボタンはここまで -->
     </nav>
     <!-- ヘッダーナビはここまで -->
 
@@ -77,7 +76,7 @@
 
   <!-- クリック無しで常に表示されている範囲 -->
   <div class="header_inner flex_wrapper">
-    
+
     <!-- ハンバーガーボタン -->
     <div class="burger-btn_container" id="burger-btn">
       <div class="burger-btn">
@@ -143,34 +142,41 @@
       </ul>
       <!-- ナビリストはここまで -->
 
-      <div class="reserve_wrapper">
-        <div class="reserve-btn_wrapper" id="reserve-btn">
-          <button class="reserve-btn">
-            ご予約
-          </button>
-        </div>
-      </div>
+      <!-- ボタンとSNSエリア -->
+      <div class="btns-container flex_wrapper">
 
-      <!-- SNSエリア -->
-      <div class="sns_wrapper">
-        <ul class="sns-icon_list flex_wrapper">
-          <li class="sns-icon_list-item line-icon">
-            <a href="#" class="link">
-              <div class="img_wrapper">
-                <img src="/common/img/LINE_Brand_icon.png" alt="LINEのアイコン">
-              </div>
-            </a>
-          </li>
-          <li class="sns-icon_list-item instagram-icon">
-            <a href="#" class="link">
-              <div class="img_wrapper">
-                <img src="/common/img/icon-instagram.png" alt="instagramのアイコン">
-              </div>
-            </a>
-          </li>
-        </ul>
+        <!-- 予約ボタン -->
+        <div class="reserve_wrapper">
+          <div class="reserve-btn_wrapper" id="reserve-btn">
+            <button class="reserve-btn" type=“button” onclick="location.href='/reservation/'">
+              ご予約
+            </button>
+          </div>
+        </div>
+        <!-- 予約ボタンはここまで -->
+
+        <!-- SNSエリア -->
+        <div class="sns_wrapper">
+          <ul class="sns-icon_list flex_wrapper">
+            <li class="sns-icon_list-item line-icon">
+              <a href="#" class="link">
+                <div class="img_wrapper">
+                  <img src="/common/img/LINE_Brand_icon.png" alt="LINEのアイコン">
+                </div>
+              </a>
+            </li>
+            <li class="sns-icon_list-item instagram-icon">
+              <a href="#" class="link">
+                <div class="img_wrapper">
+                  <img src="/common/img/icon-instagram.png" alt="instagramのアイコン">
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- SNSエリアはここまで -->
       </div>
-      <!-- SNSエリアはここまで -->
+      <!-- ボタンとSNSエリアはここまで -->
 
     </nav>
   </div>

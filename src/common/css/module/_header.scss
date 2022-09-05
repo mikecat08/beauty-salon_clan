@@ -11,6 +11,7 @@
   width: 100%;
   background-color: variables.$bg__color;
   z-index: 10;
+
   @include mixin.sp {
     display: none;
   }
@@ -20,15 +21,17 @@
     margin-left: 30px;
     align-items: center;
     justify-content: space-between;
-    
+
     // ヘッダーロゴ
     .header-logo_wrapper {
       width: 70px;
+
       .link {
         display: block;
         height: 100%;
       }
     }
+
     // ヘッダーロゴはここまで
 
     // ヘッダーナビ
@@ -41,7 +44,7 @@
         margin-right: 30px;
 
         .header-nav-list-item {
-          
+
           &:not(:last-child) {
             &::after {
               content: '/';
@@ -51,12 +54,13 @@
           }
         }
       }
+
       // ナビリストはここまで
 
       // ヘッダーボタン
       .btn_container {
         height: 100%;
-  
+
         .reserve-btn {
           .link {
             display: flex;
@@ -68,7 +72,7 @@
             color: variables.$accent-txt__color;
           }
         }
-  
+
         .instagram-btn {
           .link {
             display: flex;
@@ -77,7 +81,7 @@
             justify-content: center;
             align-items: center;
             background-color: variables.$instagram-btn__color;
-  
+
             .instagram-logo {
               width: 24px;
               height: 24px;
@@ -85,9 +89,11 @@
           }
         }
       }
+
       // ヘッダーボタンはここまで
 
     }
+
     // ヘッダーナビリストはここまで
 
   }
@@ -103,6 +109,7 @@
   width: 100%;
   background-color: variables.$bg__color;
   z-index: 10;
+
   @include mixin.pc {
     display: none;
   }
@@ -120,7 +127,7 @@
       flex-shrink: 0;
       margin-left: 8px;
       cursor: pointer;
-      
+
       .burger-btn {
         height: 100%;
         position: relative;
@@ -158,16 +165,19 @@
         }
       }
     }
+
     // ハンバーガーボタンはここまで
 
     // ヘッダーロゴ
     .header-logo_wrapper {
       width: 48px;
+
       .link {
         display: block;
         height: 100%;
       }
     }
+
     // ヘッダーロゴはここまで
 
     // 予約ボタン
@@ -183,6 +193,7 @@
         align-items: center;
       }
     }
+
     // 予約ボタンはここまで
 
   }
@@ -200,72 +211,88 @@
           margin-top: 25px;
           border-bottom: 1px solid variables.$thin-border__color;
           padding-bottom: 8px;
+
           &:first-child {
             margin-top: 45px;
           }
         }
       }
+
       // ナビリストはここまで
 
-      //予約ボタン
-      .reserve_wrapper {
-        margin-top: 30px;
+      // ボタンとSNSエリア
+      .btns-container {
+        justify-content: center;
 
-        .reserve-btn_wrapper {
-          background-color: variables.$reserve-btn__color;
-          width: 100px;
-          margin: 0 auto;
-          text-align: center;
+        //予約ボタン
+        .reserve_wrapper {
+          margin-top: 30px;
+          height: 40px;
+          margin-right: 20px;
 
-          .reserve-btn {
-            
+          .reserve-btn_wrapper {
+            background-color: variables.$reserve-btn__color;
+            width: 100px;
+            height: 100%;
+            margin: 0 auto;
+            text-align: center;
+
+            .reserve-btn {
+              color: variables.$accent-txt__color;
+              padding: 0;
+              width: 100%;
+              height: 100%;
+            }
           }
         }
-      }
-      // 予約ボタンはここまで
 
-      // SNSエリア
-      .sns_wrapper {
-        margin: 30px 0 35px;
+        // 予約ボタンはここまで
 
-        .sns-icon_list {
-          margin: 30px 0;
-          justify-content: center;
+        // SNSエリア
+        .sns_wrapper {
 
-          .sns-icon_list-item {
-            width: 40px;
-            height: 40px;
-            &:first-child {
-              margin-right: 20px;
-            }
+          .sns-icon_list {
+            margin: 30px 0;
+            justify-content: center;
 
-            &.line-icon {
-              background-color: variables.$line-bland__color;
-            }
+            .sns-icon_list-item {
+              width: 40px;
+              height: 40px;
 
-            &.instagram-icon {
-              background-color: variables.$instagram-bland__color;
+              &:first-child {
+                margin-right: 20px;
+              }
 
-              .link {
-                display: flex;
-                height: 100%;
-                flex-shrink: 0;
-                align-items: center;
-                justify-content: center;
+              &.line-icon {
+                background-color: variables.$line-bland__color;
+              }
 
-                .img_wrapper {
-                  width: 28px;
+              &.instagram-icon {
+                background-color: variables.$instagram-bland__color;
+
+                .link {
+                  display: flex;
+                  height: 100%;
+                  flex-shrink: 0;
                   align-items: center;
+                  justify-content: center;
+
+                  .img_wrapper {
+                    width: 28px;
+                    align-items: center;
+                  }
                 }
               }
             }
           }
         }
-      }
-      // SNSエリアはここまで
 
+        // SNSエリアはここまで
+      }
+      // ボタンとSNSエリアはここまで
     }
   }
+
   // ハンバーガーメニューはここまで
 
 }
