@@ -4,19 +4,36 @@
 // ==============================
 
 //ブレイクポイントの設定
-$breakpoint-sp:'900px';
-$breakpoint-pc:'901px';
+$breakpoint-sp: '900px';
+$breakpoint-pc: '901px';
+$breakpoint-bg: '480px';
+$breakpoint-flex: '600px';
 
-//SPデザイン指定用のミキシン
+
+// SPデザイン指定用のミキシン
 @mixin sp {
   @media screen and (max-width:$breakpoint-sp) {
     @content;
   }
 }
 
-//PCデザイン指定用のミキシン
+// PCデザイン指定用のミキシン
 @mixin pc {
   @media screen and (min-width:$breakpoint-pc) {
+    @content;
+  }
+}
+
+// 量産ページの背景
+@mixin bg-fitting {
+  @media screen and (max-width:$breakpoint-bg) {
+    @content;
+  }
+}
+
+// プロフィールエリア調整用
+@mixin flex-fit {
+  @media screen and (min-width:$breakpoint-flex) {
     @content;
   }
 }

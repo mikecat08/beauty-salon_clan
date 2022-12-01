@@ -1,27 +1,43 @@
 <!DOCTYPE html>
 <html lang="ja">
 
+  <head prefix=”og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# website: https://ogp.me/ns/website#”>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#000000">
   <meta name="format-detection" content="telephone=no,email=no,address=no">
   <title>CLAN -ヘアサロン クラン- 大分/府内町の美容室</title>
-  <meta name="description" content="テストテストテストテスト">
+  <meta name="description" content="大分駅から徒歩5分 府内町の美容室CLANの公式WEBサイトです。">
 
   <!-- ファビコンの読み込み -->
   <link rel="icon" href="/common/img/favicon.ico">
 
+  <!-- OGPの設定 -->
+  <meta property="og:url" content="https://clan-hairsalon.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CLAN -ヘアサロン クラン- 大分/府内町の美容室" />
+  <meta property="og:description" content="大分駅から徒歩5分 府内町の美容室CLANの公式WEBサイトです。" />
+  <meta property="og:site_name" content="CLAN -ヘアサロン クラン- 大分/府内町の美容室" />
+  <meta property="og:image" content="https://clan-hairsalon.com/common/img/ogp-img.jpg" />
+  <!-- OGPの設定はここまで -->
+
   <!-- Googleフォントの読み込み -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <!-- Googleフォントの読み込みはここまで -->
 
-  <!-- CSSの読み込み -->
+  <!-- 基本的なCSSの読み込み -->
   <link rel="stylesheet" type="text/css" href="/common/css/all.css">
   <link rel="stylesheet" type="text/css" href="/css/top.css">
-  <!-- CSSの読み込みはここまで -->
+  <!-- 基本的なCSSの読み込みはここまで -->
+
+  <!-- swiperのCSS読み込み -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <!-- swiperのCSS読み込みはここまで -->
 
 </head>
 
@@ -53,9 +69,11 @@
         </h1>
 
         <!-- スクロールを示唆するリンクテキストとアニメーション -->
-        <a href="#concept" class="button-scroll">
+        <a href="#concept" class="scroll-dowon">
           <span class="scroll-txt">Scroll Down</span>
-          <span class="line"></span>
+          <div class="img_wrapper scrooll-down-icon">
+            <img src="/common/img/scroll-down.png" alt="スクロールダウンを示す矢印アイコン">
+          </div>
         </a>
         <!-- スクロールを示唆するリンクテキストとアニメーションはここまで -->
 
@@ -64,36 +82,454 @@
     <!-- メインビジュアルはここまで -->
 
     <!-- コンセプトセクション -->
-    <section class="concept section_wrapper" id="concept">
+    <section class="concept_section mod__section_wrapper" id="concept">
       <div class="section_inner">
         <div class="section_bg">
           <div class="contents-area">
             <h2 class="section-ttl">
-              ここに英語の見出しが入る想定
+              CONCEPT
+              <!-- <span class="section-sub-ttl">
+                CLANとは
+              </span> -->
             </h2>
-            <p class="normal-txt">
-              仮テキスト仮テキスト仮テキスト仮テキスト<br>
-              仮テキスト仮テキスト仮テキスト仮テキスト
+            <p class="normal-txt first-paragraph" style="font-size: 2rem;">
+              落ち着いた空間が広がる<br class="sp_only">マンツーマンの<br class="sp_only">プライベートサロン
             </p>
-            <p class="normal-txt">
-              仮テキスト仮テキスト仮テキスト仮テキスト<br>
-              仮テキスト仮テキスト仮テキスト仮テキスト
+            <p class="normal-txt first-paragraph">
+              完全予約制でお客様一人ひとりのライフスタイルを考慮した上でスタイリングやヘアケアに関するアドバイスを致します。
             </p>
-            <p class="normal-txt">
-              仮テキスト仮テキスト仮テキスト仮テキスト<br>
-              仮テキスト仮テキスト仮テキスト仮テキスト
-            </p>
-            <p class="normal-txt">
-              仮テキスト仮テキスト仮テキスト仮テキスト
-            </p>
-            <p class="normal-txt">
-              仮テキスト仮テキスト仮テキスト仮テキスト
-            </p>
+
+            <div class="mod__txt-link_wrapper">
+              <a href="/reservation/" class="mod__txt-link link">
+                <span class="mod__txt-link_inner">
+                  ご予約はこちら
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <!-- コンセプトセクションはここまで -->
+
+    <!-- スタイルセクション -->
+    <section class="style_section mod__section_wrapper" id="style">
+      <div class="section_inner">
+        <div class="section_bg">
+          <div class="contents-area">
+            <h2 class="section-ttl">
+              STYLE
+              <!-- <span class="section-sub-ttl">
+                スタイル
+              </span> -->
+            </h2>
+
+            <!-- swiper -->
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <!-- スライド -->
+                <div class="swiper-slide">
+                  <div class="img_wrapper">
+                    <img src="/img/slide01.jpg" alt="スライド画像1">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img_wrapper">
+                    <img src="/img/slide02.jpg" alt="スライド画像2">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img_wrapper">
+                    <img src="/img/slide03.jpg" alt="スライド画像3">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img_wrapper">
+                    <img src="/img/slide04.jpg" alt="スライド画像4">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img_wrapper">
+                    <img src="/img/slide05.jpg" alt="スライド画像5">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img_wrapper">
+                    <img src="/img/slide06.jpg" alt="スライド画像6">
+                  </div>
+                </div>
+                <!-- スライドはここまで -->
+              </div>
+            </div>
+
+            <div class="swiper-nav-container">
+              <!-- 左向きナビボタン -->
+              <div class="swiper-button-prev"></div>
+              <!-- ページネーション -->
+              <div class="swiper-pagination"></div>
+              <!-- 右向きナビボタン -->
+              <div class="swiper-button-next"></div>
+            </div>
+            <!-- swiperはここまで -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- スタイルセクションはここまで -->
+
+    <!-- スタイリストセクション -->
+    <section class="stylist_section mod__section_wrapper" id="stylist">
+      <div class="section_inner">
+        <div class="section_bg">
+          <div class="contents-area">
+            <h2 class="section-ttl">
+              STYLIST
+              <!-- <span class="section-sub-ttl">
+                スタイリスト
+              </span> -->
+            </h2>
+
+            <div class="profile-container">
+              <div class="img_wrapper">
+                <img src="/img/profile-img.jpg" alt="スタイリストのプロフィール画像">
+              </div>
+              <div class="profile-txt-container">
+                <h3 class="profile-ttl">
+                  ANDO RINA
+                </h3>
+                <p class="normal-txt">
+                  美容師歴8年<br>
+                  お客様一人ひとりに似合わせたカット、<br class="br_fit">
+                  透け感のあるニュアンスカラー、<br class="br_fit">
+                  ​ヘアアレンジが得意です。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- スタイリストセクションはここまで -->
+
+    <!-- メニューセクション -->
+    <section class="menu_section mod__section_wrapper" id="menu">
+      <div class="section_inner">
+        <div class="section_bg">
+          <div class="contents-area">
+            <h2 class="section-ttl">
+              MENU
+              <!-- <span class="section-sub-ttl">
+                メニューリスト
+              </span> -->
+            </h2>
+            <ul class="menu-list">
+
+              <!-- カット料金 -->
+              <li class="menu-list-item">
+                <h3 class="menu-ttl">
+                  Cut
+                </h3>
+                <table class="menu-detail-table">
+                  <tbody class="menu-detail-table-body">
+                    <tr class="menu-detail-table-row">
+                      <th class="menu-detail-table-head">
+                        キッズ
+                      </th>
+                      <td class="menu-detail-table-fee">
+                        ¥2,200
+                      </td>
+                    </tr>
+                    <tr class="menu-detail-table-row">
+                      <th class="menu-detail-table-head">
+                        小中高
+                      </th>
+                      <td class="menu-detail-table-fee">
+                        ¥3,300
+                      </td>
+                    </tr>
+                    <tr class="menu-detail-table-row">
+                      <th class="menu-detail-table-head">
+                        専門・大学
+                      </th>
+                      <td class="menu-detail-table-fee">
+                        ¥3,850
+                      </td>
+                    </tr>
+                    <tr class="menu-detail-table-row">
+                      <th class="menu-detail-table-head">
+                        大人
+                      </th>
+                      <td class="menu-detail-table-fee">
+                        ¥4,400
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <p class="mod__annotation-txt">
+                  シャンプー / ブロー代含む
+                </p>
+              </li>
+              <!-- カット料金はここまで -->
+
+              <!-- カラー料金 -->
+              <li class="menu-list-item">
+                <h3 class="menu-ttl">
+                  Color
+                </h3>
+                <table class="menu-detail-table">
+                  <tr class="menu-detail-table-row">
+                    <th class="menu-detail-table-head">
+                      ワンカラー
+                    </th>
+                    <td class="menu-detail-table-fee">
+                      ¥6,050
+                    </td>
+                  </tr>
+                  <tr class="menu-detail-table-row">
+                    <th class="menu-detail-table-head">
+                      ミディアム
+                    </th>
+                    <td class="menu-detail-table-fee">
+                      +¥1,100
+                    </td>
+                  </tr>
+                  <tr class="menu-detail-table-row">
+                    <th class="menu-detail-table-head">
+                      ロング
+                    </th>
+                    <td class="menu-detail-table-fee">
+                      +¥1,650
+                    </td>
+                  </tr>
+                  <tr class="menu-detail-table-row">
+                    <th class="menu-detail-table-head">
+                      ブリーチ
+                    </th>
+                    <td class="menu-detail-table-fee">
+                      +¥6,600
+                    </td>
+                  </tr>
+                </table>
+                <p class="mod__annotation-txt">
+                  S/B代 (¥2,750) 別
+                </p>
+              </li>
+              <!-- カラー料金はここまで -->
+
+              <!-- パーマ料金 -->
+              <li class="menu-list-item">
+                <h3 class="menu-ttl">
+                  Perm
+                </h3>
+                <table class="menu-detail-table">
+                  <tr class="menu-detail-table-row">
+                    <th class="menu-detail-table-head">
+                      パーマ
+                    </th>
+                    <td class="menu-detail-table-fee">
+                      ¥11,000
+                    </td>
+                  </tr>
+                  <tr class="menu-detail-table-row">
+                    <th class="menu-detail-table-head">
+                      デジタルパーマ
+                    </th>
+                    <td class="menu-detail-table-fee">
+                      ¥14,300
+                    </td>
+                  </tr>
+                  <tr class="menu-detail-table-row">
+                    <th class="menu-detail-table-head">
+                      ストカール
+                    </th>
+                    <td class="menu-detail-table-fee">
+                      ¥17,600
+                    </td>
+                  </tr>
+                  <tr class="menu-detail-table-row">
+                    <th class="menu-detail-table-head">
+                      ストレートパーマ
+                    </th>
+                    <td class="menu-detail-table-fee">
+                      ¥11,000
+                    </td>
+                  </tr>
+                  <tr class="menu-detail-table-row">
+                    <th class="menu-detail-table-head">
+                      ミディアム
+                    </th>
+                    <td class="menu-detail-table-fee">
+                      +¥1,100
+                    </td>
+                  </tr>
+                  <tr class="menu-detail-table-row">
+                    <th class="menu-detail-table-head">
+                      ロング
+                    </th>
+                    <td class="menu-detail-table-fee">
+                      +¥1,650
+                    </td>
+                  </tr>
+                </table>
+                <p class="mod__annotation-txt">
+                  カット料金含む
+                </p>
+              </li>
+              <!-- パーマ料金はここまで -->
+
+              <!-- ヘッドスパ料金 -->
+              <li class="menu-list-item">
+                <h3 class="menu-ttl">
+                  Head Spa
+                </h3>
+                <table class="menu-detail-table">
+                  <tr class="menu-detail-table-row">
+                    <th class="menu-detail-table-head">
+                      ヘッドスパ (20分)
+                    </th>
+                    <td class="menu-detail-table-fee">
+                      ¥1,650
+                    </td>
+                  </tr>
+                  <tr class="menu-detail-table-row">
+                    <th class="menu-detail-table-head">
+                      ヘッドスパ (30分)
+                    </th>
+                    <td class="menu-detail-table-fee">
+                      ¥3,300
+                    </td>
+                  </tr>
+                </table>
+                <p class="mod__annotation-txt">
+                  S/B代 別
+                </p>
+              </li>
+              <!-- ヘッドスパ料金はここまで -->
+
+              <!-- トリートメント料金 -->
+              <li class="menu-list-item">
+                <h3 class="menu-ttl">
+                  Treatment
+                </h3>
+                <table class="menu-detail-table">
+                  <tr class="menu-detail-table-row">
+                    <th class="menu-detail-table-head">
+                      クイックトリートメント
+                    </th>
+                    <td class="menu-detail-table-fee">
+                      ¥1,650
+                    </td>
+                  </tr>
+                  <tr class="menu-detail-table-row">
+                    <th class="menu-detail-table-head">
+                      プレミアムトリートメント
+                    </th>
+                    <td class="menu-detail-table-fee">
+                      ¥3,300
+                    </td>
+                  </tr>
+                </table>
+                <p class="mod__annotation-txt">
+                  S/B代 別
+                </p>
+              </li>
+              <!-- トリートメント料金はここまで -->
+
+              <!-- ヘアセット料金 -->
+              <li class="menu-list-item">
+                <h3 class="menu-ttl">
+                  Hair Set
+                </h3>
+                <table class="menu-detail-table">
+                  <tr class="menu-detail-table-row">
+                    <th class="menu-detail-table-head">
+                      ヘアセット
+                    </th>
+                    <td class="menu-detail-table-fee">
+                      ¥4,950
+                    </td>
+                  </tr>
+                </table>
+
+              </li>
+              <!-- ヘアセット料金はここまで -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- メニューセクションはここまで -->
+
+    <!-- アクセスセクション -->
+    <section class="access_section mod__section_wrapper" id="access">
+      <div class="section_inner">
+        <div class="section_bg">
+          <div class="contents-area">
+            <h2 class="section-ttl">
+              ACCESS
+              <!-- <span class="section-sub-ttl">
+                アクセス情報
+              </span> -->
+            </h2>
+
+            <div class="map-info-container">
+              <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3337.183583282313!2d131.60629541489234!3d33.2354935808361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35469f64d4dac6d1%3A0xe14c3ce3c1892992!2z44CSODcwLTAwMjEg5aSn5YiG55yM5aSn5YiG5biC5bqc5YaF55S677yR5LiB55uu77yR4oiS77yR77yVIOW6nOWGheOCu-ODs-OCv-ODvOODk-ODqyA1Zg!5e0!3m2!1sja!2sjp!4v1667035232850!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+  
+              <div class="access-txt-container">
+                <p class="normal-txt">
+                  JR「大分」駅 北口より徒歩約5分
+                </p>
+                <div class="mod__txt-link_wrapper">
+                  <a href="https://goo.gl/maps/cAWmnvdnSzVG9yRo8" class="mod__txt-link link" target="_blank" rel="noopener noreferrer">
+                    <span class="mod__txt-link_inner external">
+                      Google Maps
+                    </span>
+                  </a>
+                </div>
+              </div>
+  
+              <!-- 店舗情報 -->
+              <div class="info-container">
+                <ul class="info-list">
+                  <li class="info-list-item">
+                    <h3 class="info-list-ttl">
+                      Open / Close
+                    </h3>
+                    <p class="info-list-txt">
+                      9:00 - 18:00
+                    </p>
+                    <p class="mod__annotation-txt" style="color: white;">
+                      カットのみ19:00まで受け付けております。
+                    </p>
+                  </li>
+                  <li class="info-list-item">
+                    <h3 class="info-list-ttl">
+                      Holiday
+                    </h3>
+                    <p class="info-list-txt">
+                      月曜日
+                    </p>
+                  </li>
+                  <li class="info-list-item">
+                    <h3 class="info-list-ttl">
+                      Address
+                    </h3>
+                    <p class="info-list-txt">
+                      〒870-0021 大分県大分市府内町1丁目1-15 府内センタービル 5F
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <!-- 店舗情報はここまで -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- アクセスセクションはここまで -->
 
   </main>
   <!-- メインコンテンツはここまで -->
@@ -105,6 +541,12 @@
 
   <!-- 共通のjs読み込み -->
   <script src="/common/js/script.min.js"></script>
+
+  <!-- 共通のjs読み込み -->
+  <script src="/js/script.min.js"></script>
+
+  <!-- swiperのjs読み込み -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
 </body>
 

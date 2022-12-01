@@ -1,59 +1,20 @@
 $(function () {
 
   //=====================================
-  //検索窓開閉の動き
-  //=====================================
-
-  //PC版
-  //何度も指定するので検索窓の指定を変数に格納します。
-  var $searchInput = $('#search-container .search-input');
-
-  //虫眼鏡ボタンをクリックした時の動作
-  $('#search-container .pc-search').on('click', function () {
-
-    //検索窓がopenedというクラスを持っている場合
-    if ($searchInput.hasClass('opened')) {
-
-      //openedというクラスを無くして検索窓を非表示にします。
-      $searchInput.removeClass('opened');
-      $searchInput.addClass('closed');
-      $searchInput.slideUp();
-
-      //暗くなっている背景を元に戻す目的で、bgというidを持つ要素からactiveというクラスを取り除きます。
-      $('#dark-mask').removeClass('active');
-
-      //検索窓がopenedというクラスを持っていない場合
-    } else {
-
-      //openedというクラスを付与して検索窓を表示します。
-      $searchInput.addClass('opened');
-      $searchInput.removeClass('closed');
-      $searchInput.slideDown();
-
-      //背景を暗くする目的で、bgというidを持つ要素にactiveというクラスを付与します。
-      $('#dark-mask').addClass('active');
-    }
-  });
-
-
-  
-
-
-  //=====================================
   //fade upの動き
   //=====================================
 
   //ウィンドウがスクロールされたタイミングで下記の処理が動きます。
   $(window).scroll(function () {
 
-    //ドキュメント上端からウィンドウ上端までの距離を取得します。
+    //ページ上端からウィンドウ上端までの距離を取得します。
     var scrollTop = $(this).scrollTop();
 
-    //ドキュメント上端からウィンドウ下端までの距離を取得します。
+    //ページ上端からウィンドウ下端までの距離を取得します。
     var scrollBottom = scrollTop + $(this).height();
 
     //fadeup-targetというクラスを持つ要素それぞれに下記の処理を行います。
-    //.each()が無いと全部のfadeup-targetクラスに対して一気に処理が行われるっぽいです。
+    //.each()が無いと全部のfadeup-targetクラスに対して一気に処理が行われてしまいます。
     $('.fadeup-target').each(function () {
 
       //ウィンドウ下端に対象要素が250px分見えたタイミングで、in-viewというクラスが付与されます。
@@ -63,72 +24,134 @@ $(function () {
       }
     });
   });
-});
 
 
-//=====================================
-//ハンバーガーボタン開閉の動き
-//=====================================
+  //=====================================
+  //ハンバーガーボタン開閉の動き
+  //=====================================
 
-//何度も指定するので検索窓の指定を変数に格納します。
-var $burgerMenu = $('#burger-menu');
-var $burgerBtn = $('#burger-btn');
+  //何度も指定するので検索窓の指定を変数に格納します。
+  var $burgerMenu = $('#burger-menu');
+  var $burgerBtn = $('#burger-btn');
 
-//ハンバーガーボタンをクリックした時の動作
-$burgerBtn.on('click', function () {
+  //ハンバーガーボタンをクリックした時の動作
+  $burgerBtn.on('click', function () {
 
-  //ハンバーガーボタンがopenedというクラスを持っている場合
-  if ($burgerBtn.hasClass('opened')) {
+    //ハンバーガーボタンがopenedというクラスを持っている場合
+    if ($burgerBtn.hasClass('opened')) {
+
+      //ハンバーガーボタンからopenedというクラスを削除します。
+      $burgerBtn.removeClass('opened');
+      //アコーディオンメニューをスライドアップで非表示にします。
+      $burgerMenu.slideUp();
+      //予約ボタンの不透明度を1にします。
+      $('#reserve-btn').css('opacity', '1');
+      //暗くなっている背景を元に戻す目的で、bgというidを持つ要素からactiveというクラスを取り除きます。
+      $('#dark-mask').removeClass('active');
+      //ヘッダーの背景色を透過に戻します。
+      $('#spHeader').removeClass('bg-white');
+
+      //ハンバーガーボタンがopenedというクラスを持っていない場合
+    } else {
+
+      //ハンバーガーボタンにopenedというクラスを付与します。
+      $burgerBtn.addClass('opened');
+      //ハンバーガーメニューをスライドダウンで表示させます。
+      $burgerMenu.slideDown();
+      //予約ボタンの不透明度を0にします。
+      $('#reserve-btn').css('opacity', '0');
+      //背景を暗くする目的で、bgというidを持つ要素にactiveというクラスを付与します。
+      $('#dark-mask').addClass('active');
+      //ヘッダーの背景色を白色にします。
+      $('#spHeader').addClass('bg-white');
+    }
+  });
+
+
+  //=============================================
+  //ハンバーガーメニュー内のリンクをクリックした際の動き
+  //=============================================
+
+  var $burgerNav = $('.burger-menu_list-item');
+
+  //ハンバーガーメニュー内のリンクをクリックした時
+  $burgerNav.on('click', function () {
 
     //ハンバーガーボタンからopenedというクラスを無くします。
     $burgerBtn.removeClass('opened');
-    //アコーディオンメニューをスライドアップで非表示にします。
-    $burgerMenu.slideUp();
+    //アコーディオンメニューを非表示にします。
+    $burgerMenu.css('display', 'none');
     //予約ボタンの不透明度を1にします。
     $('#reserve-btn').css('opacity', '1');
     //暗くなっている背景を元に戻す目的で、bgというidを持つ要素からactiveというクラスを取り除きます。
-    $('#bg').removeClass('active');
-
-    //ハンバーガーボタンがopenedというクラスを持っていない場合
-  } else {
-
-    //ハンバーガーボタンにopenedというクラスを付与します。
-    $burgerBtn.addClass('opened');
-    //ハンバーガーメニューをスライドダウンで表示させます。
-    $burgerMenu.slideDown();
-    //予約ボタンの不透明度を0にします。
-    $('#reserve-btn').css('opacity', '0');
-    //背景を暗くする目的で、bgというidを持つ要素にactiveというクラスを付与します。
-    $('#bg').addClass('active');
-  }
-});
+    $('#dark-mask').removeClass('active');
+  });
 
 
-//=====================================
-//アコーディオンメニュー開閉の動き
-//=====================================
+  //=====================================
+  //背景モジュールパーツの縦横比調整
+  //=====================================
 
-//アコーディオンメニュー開閉のトリガーとなるaタグをクリックした時の動作
-$('.js-dropdown-sp .icon_bottomArrow').on('click', function () {
+  // ページが読み込まれたされた時に
+  $(window).on("load", function () {
 
-  //クリックされたaタグがopenedというクラスを持っている場合
-  if ($(this).hasClass('opened')) {
+    // ブラウザの横幅を取得
+    var windowWidth = $(window).width();
 
-    //クリックされたaタグからopenedというクラスを無くします。
-    $(this).removeClass('opened');
-    //クリックされたaタグの背景色を#fffに戻します。
-    $(this).css('background-color', '#fff');
-    //クリックされたaタグの兄弟要素をスライドアップで非表示にします。
-    $(this).next('.global-megamenu').stop().slideUp();
+    // ブラウザの縦幅を取得
+    var windowHeight = $(window).height();
 
-    //クリックされたaタグがopenedというクラスを持っていない場合
-  } else {
+    // ブラウザの横幅：縦幅の比率が16：10より縦長の場合
+    if (windowWidth / windowHeight < 1.6) {
 
-    //クリックされたaタグからopenedというクラスを無くします。
-    $(this).addClass('opened');
-    //クリックされたaタグの背景色を#e6f1f8に戻します。
-    $(this).css('background-color', '#e6f1f8');
-    //クリックされたaタグの兄弟要素をスライドダウンで表示させます。
-    $(this).next('.global-megamenu').stop().slideDown();
-  }
+      // mod__bg_wrapperにsp_bgというクラスを付与します。
+      $('#mod__bg_wrapper').addClass('sp_bg');
+    }
+  });
+
+  // ページが読み込まれたされた時に
+  $(window).resize(function () {
+
+    // ブラウザの横幅を取得
+    var windowWidth = $(window).width();
+
+    // ブラウザの縦幅を取得
+    var windowHeight = $(window).height();
+
+    // ブラウザの横幅：縦幅の比率が16：10より縦長の場合
+    if (windowWidth / windowHeight < 1.6) {
+
+      // mod__bg_wrapperにsp_bgというクラスを付与します。
+      $('#mod__bg_wrapper').addClass('sp_bg');
+    }
+  });
+
+
+  //=====================================
+  //ページ内繊維のスムーススクロール化
+  //=====================================
+
+  // #で始まるa要素をクリックした場合に処理（"#"←ダブルクォーテンションで囲むのを忘れずに。忘れるとjQueryのバージョンによっては動きません。）
+  $('a[href^="#"]').click(function(){
+
+    // 移動先をヘッダーの高さ分調整するための変数を定義します。
+    var adjust = -65;
+
+    // スクロールの速度（ミリ秒）
+    var speed = 400;
+
+    // アンカーの値取得 リンク先（href）を取得して、hrefという変数に代入
+    var href= $(this).attr("href");
+    
+    // 移動先を取得 リンク先(href）のidがある要素を探して、targetに代入
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    
+    // 移動先を調整 idの要素の位置をoffset()で取得して、positionに代入
+    var position = target.offset().top + adjust;
+    
+    // スムーススクロール linear（等速） or swing（変速）
+    $('body,html').animate({scrollTop:position}, speed, 'swing');
+    return false;
+  });
+
 });

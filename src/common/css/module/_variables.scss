@@ -1,13 +1,20 @@
 // ==============================
 // 色の定義
 // ==============================
-$main-txt__color: #222;
+$main-txt__color: #66615a;
 $accent-txt__color: #fff;
+$thin-txt-color: #888;
 $movie_bg__color: #000;
 $bg__color: #fff;
 $reserve-btn__color: #b69f7e;
 $instagram-btn__color: #7E776F;
-$instagram-bland__color: #e1306c;
-$line-bland__color: #00c300;
+$line-bland__color: #06c755;
+$instagram-bg__color: linear-gradient(150deg, rgba(247, 166, 12, 1) 9%, rgba(255, 34, 87, 1) 50%, rgba(154, 39, 238, 1) 91%);
 $thin-border__color: #ccc;
+$super-thin-border__color: #ddd;
 $burger-menu_opened-bg__color: rgba(0, 0, 0, 0.4);
+$ttl-bg__color: #f6f5f3;
+$open-info-bg__color: rgba(146, 143, 138, 0.7);
+$top-bg_white__color: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.85) 100%);
+$top-bg_main__color: linear-gradient(to right, rgba(126, 119, 111, 1) 0%, rgba(126, 119, 111, 0.85) 100%);
+$under_line__color: linear-gradient(transparent 70%, $reserve-btn__color 0%);

@@ -1,0 +1,468 @@
+@use 'variables';
+@use 'mixin';
+
+//=====================================
+// モジュールパーツのスタイル
+//=====================================
+.mod__bg_wrapper {
+  width: 100%;
+  position: fixed;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  background-color: #000;
+  pointer-events: none;
+
+  @include mixin.sp {
+    height: 100vh;
+  }
+
+  &.sp_bg {
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+}
+
+.main {
+  // h1見出しパーツ
+  .mod__h1-ttl_wrapper {
+    padding: 0 30px;
+    @include mixin.sp {
+      padding: 0 15px;
+    }
+
+    .mod__h1-ttl {
+      max-width: 1080px;
+      margin: 90px auto 0;
+      font-size: 3.6rem;
+      font-weight: bold;
+      @include mixin.sp {
+        font-size: 3rem;
+        margin-top: 80px;
+        padding-left: 10px;
+      }
+    }
+  }
+  // h1見出しパーツはここまで
+
+  // アンカーリストパーツ
+  .mod__anchor_list_wrapper {
+    padding: 0 30px 0;
+    
+    @include mixin.sp {
+      padding: 0 15px 0;
+    }
+
+    .mod__anchor_list {
+      max-width: 1080px;
+      margin: 20px auto 0;
+      white-space: nowrap;
+      flex-wrap: wrap;
+  
+      @include mixin.sp {
+        margin: 8px auto 0;
+        flex-direction: column;
+      }
+      .mod__anchor_list_item {
+        margin-right: 20px;
+  
+        .mod__anchor_list_item_inner {
+          display: inline-block;
+          background: variables.$bg__color;
+          margin-top: 12px;
+          padding: 8px 12px;
+  
+          .mod__anchor {
+            display: flex;
+            align-items: center;
+    
+            &::before {
+              content: '';
+              display: inline-block;
+              background: url(/common/img/icon_topArrow.png) center/contain no-repeat;
+              width: 18px;
+              height: 16px;
+              margin: 2px 8px 0 0;
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+    }
+  }
+  // アンカーリストパーツはここまで
+
+  // トップに戻るボタンリンク
+  .mod__topBackBtn-wrapper {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+
+    .mod__topBackBtn {
+      display: flex;
+      margin: 40px 0;
+      padding: 10px 20px;
+      color: variables.$accent-txt__color;
+      background: variables.$reserve-btn__color;
+
+      @include mixin.sp {
+        margin-top: 25px;
+      }
+
+      &::before {
+        display: block;
+        content: '';
+        width: 28px;
+        height: 18px;
+        background: url(/common/img/rightArrow_white.png) center/cover no-repeat;
+        margin-right: 8px;
+        transform: scale(-1, 1);
+      }
+    }
+  }
+  // トップに戻るボタンリンクはここまで
+
+  // 通常テキストパーツ
+  .mod__normal-txt {
+    margin-top: 20px;
+    @include mixin.sp {
+      margin-top: 15px;
+    }
+  }
+  // 通常テキストパーツはここまで
+
+  // 注釈テキストパーツ
+  .mod__annotation-txt {
+    margin-top: 5px;
+    font-size: 1.4rem;
+    display: flex;
+    color: #888;
+    &::before {
+      content: '※';
+      display: block;
+      margin-right: 6px;
+    }
+  }
+  // 注釈テキストパーツはここまで
+
+  // テキストリンクパーツ
+  .mod__txt-link_wrapper {
+    margin-top: 15px;
+    display: inline-block;
+    @include mixin.sp {
+      margin-top: 10px;
+    }
+    .mod__txt-link {
+      color: variables.$reserve-btn__color;
+      position: relative;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: flex-start;
+      cursor: pointer;
+      border-bottom: solid 1px variables.$reserve-btn__color;
+      &::after {
+        content: '';
+        display: inline-block;
+        width: 28px;
+        height: 18px;
+        background: url(/common/img/rightArrow.png) center/contain no-repeat;
+        margin-left: 5px;
+      }
+
+      .mod__txt-link_inner {
+        display: flex;
+        align-items: center;
+        &.external {
+          &::after {
+            content: '';
+            display: block;
+            width: 15px;
+            height: 14px;
+            margin: 0 6px 0 8px;
+            background: url(/common/img/icon_new_window.png) center/contain no-repeat;
+            flex-shrink: 0;
+          }
+        }
+      }
+    }
+  }
+  // テキストリンクパーツはここまで
+
+  .mod__strong_txt {
+    font-weight: bold;
+    position: relative;
+    color: #555;
+  }
+
+  // セクションパーツ
+  .mod__section_wrapper {
+    padding: 0 30px 0;
+
+    @include mixin.sp {
+      padding: 0 15px 0;
+    }
+
+    .mod__section {
+      max-width: 1080px;
+      margin: 70px auto 0;
+      padding: 70px 40px 50px;
+      background: variables.$bg__color;
+      @include mixin.sp {
+        margin-top: 50px;
+        padding: 35px 25px;
+      }
+  
+      &.first-section {
+        margin-top: 30px;
+        @include mixin.sp {
+          margin-top: 20px;
+        }
+      }
+  
+      // セクションパーツ内のh2見出し
+      .mod__h2-ttl {
+        font-size: 3rem;
+        position: relative;
+        font-weight: bold;
+        padding-top: 30px;
+        border-top: 3px solid variables.$super-thin-border__color;
+        position: relative;
+        @include mixin.sp {
+          font-size: 2.2rem;
+          padding-top: 16px;
+        }
+        
+        &::before {
+          content: '';
+          position: absolute;
+          top: -3px;
+          left: 0;
+          width: 160px;
+          height: 3px;
+          background: variables.$reserve-btn__color;
+          @include mixin.sp {
+            width: 100px;
+          }
+        }
+      }
+      // セクションパーツ内のh2見出しはここまで
+  
+      // 序列なしリストパーツ
+      .mod__list-wrapper {
+        margin-top: 30px;
+
+        .mod__list {
+
+          .mod__list_item {
+            position: relative;
+            padding-left: 20px;
+
+            &:not(:first-child) {
+              margin-top: 15px;
+
+              @include mixin.sp {
+                margin-top: 10px;
+              }
+            }
+
+            &::before {
+              content: '';
+              display: block;
+              width: 10px;
+              height: 10px;
+              // border-radius: 6px;
+              position: absolute;
+              top: 7px;
+              left: 2px;
+              background-color: variables.$main-txt__color;
+              opacity: 0.4;
+            }
+          }
+        }
+      }
+      // 序列なしリストパーツはここまで
+
+      // 序列ありリストパーツ
+      .mod__order-list {
+        .mod__order-list-item {
+          margin: 20px 0 0 20px;
+          @include mixin.sp {
+            margin: 15px 0 0 20px;
+          }
+        }
+      }
+      // 序列ありリストパーツはここまで
+  
+      // ステップリストパーツ
+      .mod__step-list {
+        list-style-type: none;
+        margin-top: 20px;
+  
+        .mod__step-list-item {
+          padding: 2px 0 30px 25px;
+          border-left: solid 2px variables.$reserve-btn__color;
+          &:last-child {
+            border-left: none;
+          }
+          
+          .step {
+            display: flex;
+            position: relative;
+            margin-top: 0;
+            
+            &::before {
+              display: flex;
+              width: 30px;
+              height: 30px;
+              background: variables.$reserve-btn__color;
+              position: absolute;
+              top: -2px;
+              left: -40px;
+              align-items: center;
+              justify-content: center;
+              color: variables.$accent-txt__color;
+            }
+  
+            &.step01 {
+              &::before {
+                content: '1';
+              }
+            }
+  
+            &.step02 {
+              &::before {
+                content: '2';
+              }
+            }
+  
+            &.step03 {
+              &::before {
+                content: '3';
+              }
+            }
+          }
+        }
+      }
+      // ステップリストパーツはここまで
+  
+      // SNS動線パーツ
+      .mod__sns-btn {
+        width: 100%;
+        margin-top: 20px;
+        padding: 35px;
+        font-family: 'Noto Sans JP', sans-serif;
+        border-radius: 8px;
+        cursor: pointer;
+        max-width: 770px;
+  
+        @include mixin.sp {
+          max-width: 410px;
+        }
+  
+        &.instagram {
+          background: variables.$instagram-bg__color;
+        }
+  
+        &.line {
+          background: variables.$line-bland__color;
+        }
+  
+        @include mixin.sp {
+          margin-top: 15px;
+          padding: 18px;
+          flex-direction: column;
+        }
+  
+        .link {
+          display: flex;
+          align-items: center;
+
+          @include mixin.sp {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+
+          .mod__sns-ttl_container {
+            align-items: center;
+            color: variables.$accent-txt__color;
+    
+            .mod__sns-btn-icon {
+              width: 48px;
+              height: 48px;
+              flex-shrink: 0;
+    
+              @include mixin.sp {
+                width: 36px;
+                height: 36px;
+              }
+    
+              &.line-icon {
+                width: 64px;
+                height: 64px;
+                margin-left: -10px;
+    
+                @include mixin.sp {
+                  width: 52px;
+                  height: 52px;
+                  margin-left: -5px;
+                }
+              }
+            }
+    
+            .mod__sns-btn-ttl_wrapper {
+              margin-left: 24px;
+              text-align: left;
+              @include mixin.sp {
+                margin-left: 18px;
+              }
+    
+              &.line {
+                margin-left: 12px;
+                @include mixin.sp {
+                  margin-left: 8px;
+                }
+              }
+    
+              .mod__sns-btn-ttl_acc-name {
+                font-size: 1.6rem;
+                font-weight: 400;
+              }
+              .mod__sns-btn-ttl_sns-name {
+                font-size: 1.5rem;
+                font-weight: 500;
+              }
+            }
+          }
+    
+          .mod__sns-description_conrainer {
+            margin-top: 0;
+            margin-left: 20px;
+            color: variables.$accent-txt__color;
+
+            @include mixin.sp {
+              margin-top: 12px;
+              margin-left: 0;
+            }
+    
+            .mod__sns-btn-description {
+              text-align: left;
+
+              @include mixin.sp {
+                font-size: 1.4rem;
+              }
+            }
+          }
+        }
+        
+      }
+      // SNS動線パーツはここまで
+  
+    }
+  }
+
+  // セクションパーツはここまで
+}

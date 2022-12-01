@@ -1,5 +1,5 @@
 <!-- PCのヘッダー -->
-<header class="pc-header">
+<header class="pc-header default" id="header">
   <div class="header_inner flex_wrapper">
 
     <!-- ヘッダーロゴ -->
@@ -16,27 +16,27 @@
       <!-- ナビリスト -->
       <ul class="header-nav-list flex_wrapper">
         <li class="header-nav-list-item">
-          <a href="#concept" class="link">
+          <a href="/#concept" class="link">
             CONCEPT
           </a>
         </li>
         <li class="header-nav-list-item">
-          <a href="#interior" class="link">
-            INTERIOR
+          <a href="/#style" class="link">
+            STYLE
           </a>
         </li>
         <li class="header-nav-list-item">
-          <a href="#menu" class="link">
-            MENU
-          </a>
-        </li>
-        <li class="header-nav-list-item">
-          <a href="#stylist" class="link">
+          <a href="/#stylist" class="link">
             STYLIST
           </a>
         </li>
         <li class="header-nav-list-item">
-          <a href="#access" class="link">
+          <a href="/#menu" class="link">
+            MENU
+          </a>
+        </li>
+        <li class="header-nav-list-item">
+          <a href="/#access" class="link">
             ACCESS
           </a>
         </li>
@@ -56,7 +56,7 @@
 
         <!-- インスタボタン -->
         <div class="instagram-btn">
-          <a href="#" class="link img_wrapper">
+          <a href="https://www.instagram.com/rinabskw/?igshid=YmMyMTA2M2Y%3D" target="_blank" rel="noopener noreferrer" class="link img_wrapper">
             <img src="/common/img/icon-instagram.png" class="instagram-logo" alt="インスタのロゴ">
           </a>
         </div>
@@ -72,10 +72,18 @@
 <!-- PCのヘッダーはここまで -->
 
 <!-- SPのヘッダー -->
-<header class="sp-header">
+<header class="sp-header" id="spHeader">
 
   <!-- クリック無しで常に表示されている範囲 -->
   <div class="header_inner flex_wrapper">
+
+    <!-- 予約ボタン -->
+    <div class="reserve-btn_wrapper" id="reserve-btn">
+      <a class="reserve-btn" href="/reservation/">
+        ご予約
+      </a>
+    </div>
+    <!-- 予約ボタンはここまで -->
 
     <!-- ハンバーガーボタン -->
     <div class="burger-btn_container" id="burger-btn">
@@ -83,26 +91,11 @@
         <span class="bar bar_top"></span>
         <span class="bar bar_middle"></span>
         <span class="bar bar_bottom"></span>
-        <div class="burger-btn_txt">MENU</div>
+        <div class="burger-btn_txt menu">MENU</div>
+        <div class="burger-btn_txt close">CLOSE</div>
       </div>
     </div>
     <!-- ハンバーガーボタンはここまで -->
-
-    <!-- ヘッダーロゴ -->
-    <div class="header-logo_wrapper">
-      <a href="/" class="img_wrapper link">
-        <img src="/common/img/logo.png" alt="CLANのロゴ">
-      </a>
-    </div>
-    <!-- ヘッダーロゴはここまで -->
-
-    <!-- 予約ボタン -->
-    <div class="reserve-btn_wrapper" id="reserve-btn">
-      <button class="reserve-btn" type=“button” onclick="location.href='/reservation/'">
-        ご予約
-      </button>
-    </div>
-    <!-- 予約ボタンはここまで -->
 
   </div>
   <!-- クリック無しで常に表示されている範囲はここまで -->
@@ -115,27 +108,32 @@
       <!-- ナビリスト -->
       <ul class="burger-menu_list">
         <li class="burger-menu_list-item">
-          <a href="#" class="link">
+          <a href="/" class="link">
+            TOP
+          </a>
+        </li>
+        <li class="burger-menu_list-item">
+          <a href="/#concept" class="link">
             CONCEPT
           </a>
         </li>
         <li class="burger-menu_list-item">
-          <a href="#" class="link">
-            INTERIOR
+          <a href="/#style" class="link">
+            STYLE
           </a>
         </li>
         <li class="burger-menu_list-item">
-          <a href="#" class="link">
-            MENU
-          </a>
-        </li>
-        <li class="burger-menu_list-item">
-          <a href="#" class="link">
+          <a href="/#stylist" class="link">
             STYLIST
           </a>
         </li>
         <li class="burger-menu_list-item">
-          <a href="#" class="link">
+          <a href="/#menu" class="link">
+            MENU
+          </a>
+        </li>
+        <li class="burger-menu_list-item">
+          <a href="/#access" class="link">
             ACCESS
           </a>
         </li>
@@ -148,9 +146,9 @@
         <!-- 予約ボタン -->
         <div class="reserve_wrapper">
           <div class="reserve-btn_wrapper" id="reserve-btn">
-            <button class="reserve-btn" type=“button” onclick="location.href='/reservation/'">
+            <a class="reserve-btn" href="/reservation/">
               ご予約
-            </button>
+            </a>
           </div>
         </div>
         <!-- 予約ボタンはここまで -->
@@ -159,14 +157,14 @@
         <div class="sns_wrapper">
           <ul class="sns-icon_list flex_wrapper">
             <li class="sns-icon_list-item line-icon">
-              <a href="#" class="link">
+              <a href="https://page.line.me/?accountId=dls9873n" target="_blank" rel="noopener noreferrer" class="link">
                 <div class="img_wrapper">
-                  <img src="/common/img/LINE_Brand_icon.png" alt="LINEのアイコン">
+                  <img src="/common/img/LINE_Brand_icon.jpg" alt="LINEのアイコン">
                 </div>
               </a>
             </li>
             <li class="sns-icon_list-item instagram-icon">
-              <a href="#" class="link">
+              <a href="https://www.instagram.com/rinabskw/?igshid=YmMyMTA2M2Y%3D" target="_blank" rel="noopener noreferrer" class="link">
                 <div class="img_wrapper">
                   <img src="/common/img/icon-instagram.png" alt="instagramのアイコン">
                 </div>

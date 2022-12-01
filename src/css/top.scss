@@ -1,9 +1,38 @@
 @use '../common/css/module/mixin';
 @use '../common/css/module/variables';
+@use '../common/css/module/keyframe';
 
 //===============================
 //トップページのスタイルシート
 //===============================
+
+// ヘッダー透過の設定
+.pc-header {
+  transition: all 0.2s linear;
+  
+  &.default {
+    background: transparent;
+
+    .header-logo_wrapper {
+      opacity: 0;
+    }
+
+    .header-nav-list-item {
+      .link {
+        transition: all 0.2s linear;
+        color: variables.$accent-txt__color;
+      }
+
+      &:not(:last-child) {
+        &::after {
+          transition: all 0.2s linear;
+          color: variables.$accent-txt__color;
+        }
+      }
+    }
+  }
+}
+// ヘッダー透過の設定はここまで
 
 //背景の動画に重ねて動画の色を少し暗くし全体に馴染ませる層
 .video_layer {
@@ -57,7 +86,7 @@
   .main-visual {
     position: relative;
     width: 96.87%;
-    height: calc(100vh - 60px);
+    height: 100vh;
     margin: 0 auto;
 
     .mv_inner {
@@ -69,76 +98,108 @@
         transform: translate(-50%, -50%);
       }
 
-      //スクロールを示唆するリンクテキストとアニメーション
-      .button-scroll {
+      //スクロールダウンアイコン
+      .scroll-dowon {
         position: absolute;
-        right: 0;
+        left: 50%;
         bottom: 50px;
+        display: block;
+        transform: translateX(-50%);
+        animation: scroll_down 1.6s ease-in-out infinite;
+        cursor: pointer;
 
         .scroll-txt {
-          color: #fff;
-          font-size: 1rem;
-          letter-spacing: 0.01em;
-          position: absolute;
-          top: -33px;
-          right: 47px;
-          width: 70px;
+          color: variables.$accent-txt__color;
         }
 
-        .line {
-          display: block;
-          width: 60px;
-          height: 1px;
-          background-color: rgba(255, 255, 255, 0.2);
-          transform: rotate(90deg);
-          overflow: hidden;
-          position: absolute;
-          right: 0;
-
-          &::before {
-            content: "";
-            display: block;
-            width: 100%;
-            height: 1px;
-            background-color: #fff;
+        .scrooll-down-icon {
+          width: 36px;
+          margin: -4px auto 0;
+          img {
+            transform: rotate(180deg);
           }
         }
+        
       }
-      //スクロールを示唆するリンクテキストとアニメーションはここまで
+      //スクロールダウンアイコンはここまで
     }
   }
+
   //メインビジュアルはここまで
 
+  // セクションモジュールの打ち消し（セクションモジュールと入れ子にしないと他のモジュールが機能しないため必要）
+  // セクションパーツの共通項目も以下に記載
+  .mod__section_wrapper {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+
+    .section-ttl {
+      font-family: 'Libre Baskerville', serif;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: #66615a;
+      font-size: 3rem;
+      line-height: 1.5;
+
+      .section-sub-ttl {
+        font-size: 1.8rem;
+        opacity: 0.7;
+        letter-spacing: 0;
+        display: inline-block;
+        margin-left: -4px;
+        &::before {
+          content: '/';
+        }
+      } 
+    }
+
+    .normal-txt {
+      margin-top: 10px;
+      &.first-paragraph {
+        margin-top: 15px;
+      }
+    }
+  }
+  // セクションモジュールの打ち消しはここまで
+  // セクションパーツの共通項目はここまで
+
   //コンセプトセクション
-  .concept {
-    width: 96.87%;
-    margin: 0 auto 40px;
+  .concept_section {
+    padding: 10px;
 
     .section_inner {
-      border: #fff 1px solid;
-      padding: 10px;
+      // border: variables.$accent-txt__color 1px solid;
+      padding: 5px;
+      max-width: 1080px;
+      margin: 0 auto;
 
       .section_bg {
-        background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.85) 100%);
-        padding-top: 90px;
-        padding-bottom: 114px;
+        background: variables.$top-bg_white__color;
+        padding: 30px 20px;
+        border: variables.$main-txt__color 1px solid;
+        box-shadow: 6px 6px 0 variables.$main-txt__color;
+
+        @include mixin.pc {
+          padding: 60px 40px;
+        }
 
         .contents-area {
-          width: 80%;
-          max-width: 980px;
           margin: 0 auto;
 
-          .section-ttl {
-            margin-bottom: 35px;
-            color: #66615a;
-            font-size: 3.6rem;
-            line-height: 1.5;
-            letter-spacing: 0.05em;
-          }
+          .mod__txt-link_wrapper {
+            margin-top: 20px;
+            @include mixin.sp {
+              margin-top: 15px;
+            }
+            .mod__txt-link {
+              color: variables.$main-txt__color;
+              border-bottom: 1px solid variables.$main-txt__color;
 
-          .normal-txt {
-            margin-bottom: 27px;
-
+              &::after {
+                background: url(/common/img/rightArrow_gray.png) center/cover no-repeat;
+              }
+            }
           }
         }
       }
@@ -146,6 +207,401 @@
   }
   //コンセプトセクションはここまで
 
-}
+  //スタイルセクション
+  .style_section {
+    margin-top: 60px;
 
+    .section_inner {
+      .section_bg {
+        background: variables.$top-bg_white__color;
+        padding: 50px 0;
+
+        .contents-area {
+          max-width: 1080px;
+          margin: 0 auto;
+          position: relative;
+          overflow: hidden;
+
+          .section-ttl {
+            padding: 0 23px;
+
+            @include mixin.pc {
+              padding: 0 46px;
+            }
+          }
+
+          // swiper
+          .swiper {
+            margin-top: 25px;
+            .swiper-wrapper {
+              .swiper-slide {
+                width: 100%;
+                max-width: 400px;
+
+                @include mixin.pc {
+                  max-width: 800px;
+                }
+              }
+            }
+          }
+
+          .swiper-nav-container {
+            display: flex;
+            align-items: center;
+            height: 40px;
+            justify-content: center;
+            margin-top: 15px;
+
+            // 左向きナビボタン
+            .swiper-button-prev {
+              position: static;
+              height: 100%;
+              margin-top: 0;
+              width: 40px;
+
+              &::after {
+                content: '';
+                background: url(/common/img/arrowButton.png) center/contain no-repeat;
+                display: block;
+                width: 38px;
+                height: 38px;
+              }
+            }
+            // 左向きナビボタンはここまで
+
+            // ページネーション
+            .swiper-pagination {
+              position: static;
+              height: 100%;
+              width: auto;
+              margin: 0 30px;
+              display: flex;
+              align-items: center;
+
+              .swiper-pagination-bullet {
+                width: 10px;
+                height: 10px;
+                background: variables.$reserve-btn__color;
+                &:not(:first-child) {
+                  margin: 0 0 0 14px;
+                }
+
+                &.swiper-pagination-bullet-active {
+                  width: 14px;
+                  height: 14px;
+                }
+              }
+            }
+            // ページネーションはここまで
+
+            // 右向きナビボタン
+            .swiper-button-next {
+              position: static;
+              height: 100%;
+              margin-top: 0;
+              width: 40px;
+
+              &::after {
+                content: '';
+                background: url(/common/img/arrowButton.png) center/contain no-repeat;
+                display: block;
+                width: 38px;
+                height: 38px;
+                transform: rotate(180deg);
+              }
+            }
+            // 右向きナビボタンはここまで
+          }
+          // swiperはここまで
+
+          .normal-txt {
+            padding: 0 23px;
+          }
+        }
+      }
+    }
+  }
+  //スタイルセクションはここまで
+
+  //スタイリストセクション
+  .stylist_section {
+    .section_inner {
+      .section_bg {
+        background: variables.$top-bg_white__color;
+        padding: 0 0 50px;
+
+        .contents-area {
+          max-width: 1080px;
+          margin: 0 auto;
+          position: relative;
+          overflow: hidden;
+
+          .section-ttl {
+            padding: 0 23px;
+
+            @include mixin.pc {
+              padding: 0 46px;
+            }
+          }
+
+          .profile-container {
+            margin-top: 25px;
+            padding: 0 20px;
+
+            .img_wrapper {
+              max-width: 400px;
+              margin: 0 auto;
+            }
+
+            .profile-ttl {
+              margin-top: 15px;
+              font-size: 2.4rem;
+
+              @include mixin.sp {
+                font-size: 2rem;
+              }
+            }
+
+            @include mixin.flex-fit {
+              display: flex;
+              justify-content: center;
+
+              .img_wrapper {
+                width: calc((100% - 40px)/2);
+                margin: 0 40px 0 0;
+              }
+              .profile-txt-container {
+                width: calc((100% - 40px)/2);
+              }
+              .br_fit {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  //スタイリストセクションはここまで
+
+  //メニューセクション
+  .menu_section {
+    padding: 70px 10px 10px;
+
+    .section_inner {
+      // border: variables.$accent-txt__color 1px solid;
+      padding: 5px;
+      max-width: 1080px;
+      margin: 0 auto;
+
+      .section_bg {
+        background: variables.$top-bg_white__color;
+        padding: 30px 20px;
+        border: variables.$main-txt__color 1px solid;
+        box-shadow: 6px 6px 0 variables.$main-txt__color;
+
+        @include mixin.pc {
+          padding: 60px 40px;
+        }
+
+        .contents-area {
+          margin: 0 auto;
+
+          .section-ttl {
+            @include mixin.pc {
+              margin-bottom: -10px;
+            }
+          }
+
+          .menu-list {
+            display: flex;
+            flex-wrap: wrap;
+
+            .menu-list-item {
+              width: 280px;
+
+              &:not(:last-child) {
+                margin-right: 30px;
+              }
+
+              .menu-ttl {
+                font-size: 2.2rem;
+                font-family: 'Libre Baskerville', serif;
+                font-weight: 400;
+                margin-top: 30px;
+
+                @include mixin.sp {
+                  margin-top: 15px;
+                }
+              }
+
+              .menu-detail-table {
+                border-collapse:separate;
+                border-spacing: 0 5px;
+
+                .menu-detail-table-row {
+                  .menu-detail-table-head {
+                    font-weight: normal;
+                  }
+
+                  .menu-detail-table-fee {
+                    display: block;
+                    margin-left: 20px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  //メニューセクションはここまで
+
+  //アクセスセクション
+  .access_section {
+    margin-top: 60px;
+    color: variables.$accent-txt__color;
+
+    .section_inner {
+      .section_bg {
+        background: variables.$top-bg_main__color;
+        padding: 50px 0;
+
+        .contents-area {
+          max-width: 1080px;
+          margin: 0 auto;
+          position: relative;
+          overflow: hidden;
+
+          .section-ttl {
+            padding: 0 23px;
+            color: variables.$accent-txt__color;
+            
+
+            @include mixin.pc {
+              padding: 0 46px;
+            }
+          }
+
+          .map-info-container {
+            padding: 0 20px;
+            margin-top: 25px;
+
+            @include mixin.flex-fit {
+              display: flex;
+              flex-wrap: wrap;
+            }
+
+            @include mixin.pc {
+              padding: 0 40px;
+              margin-top: 50px;
+            }
+
+            .map-container {
+              width: 100%;
+              height: 250px;
+
+              @include mixin.flex-fit {
+                order: 1;
+                width: 60%;
+                padding-right: 20px;
+              }
+  
+              @include mixin.pc {
+                height: 400px;
+                padding-right: 40px;
+              }
+            }
+  
+            .access-txt-container {
+              padding: 0 3px;
+
+              @include mixin.flex-fit {
+                order: 3;
+              }
+
+              @include mixin.pc {
+                padding: 0 6px;
+              }
+
+              .normal-txt {
+                margin-top: 20px;
+    
+                @include mixin.pc {
+                  margin-top: 40px;
+                }
+              }
+    
+              .mod__txt-link_wrapper {
+                .mod__txt-link {
+                  color: variables.$accent-txt__color;
+                  border-color: variables.$accent-txt__color;
+    
+                  &::after {
+                    background: url(/common/img/rightArrow_white.png) center/cover no-repeat;
+                  }
+    
+                  .mod__txt-link_inner {
+                    &::after {
+                      background: url(/common/img/icon_new_window_white.png) center/cover no-repeat;
+                    }
+                  }
+                }
+              }
+            }
+  
+            // 店舗情報
+            .info-container {
+              margin-top: 30px;
+              padding: 20px;
+              background: variables.$open-info-bg__color;
+  
+              @include mixin.flex-fit {
+                order: 2;
+                width: 40%;
+                margin-top: 0;
+              }
+
+              @include mixin.pc {
+                padding: 40px;
+              }
+
+              .info-list {
+                .info-list-item {
+                  &:not(:first-child) {
+                    margin-top: 15px;
+
+                    @include mixin.pc {
+                      margin-top: 30px;
+                    }
+                  }
+  
+                  .info-list-ttl {
+                    font-weight: normal;
+                  }
+  
+                  .info-list-txt {
+                    margin-top: 5px;
+
+                    @include mixin.pc {
+                      margin-top: 10px;
+                    }
+                  }
+                }
+              }
+            }
+            // 店舗情報はここまで
+          }
+        }
+      }
+    }
+  }
+  //アクセスセクションはここまで
+
+}
 //メインコンテンツはここまで
+
+.footer {
+  margin-top: 0;
+}

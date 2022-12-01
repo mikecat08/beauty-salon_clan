@@ -16,19 +16,22 @@
 html {
   font-family: 'Noto Serif JP', serif;
   font-size: 62.5%;
+  font-weight: 400;
+  letter-spacing: 0.05em;
 
   //html要素のbox-sizingの値はboerder-boxを指定
   box-sizing: border-box;
 }
 
-body{
+body {
   font-size: 1.6rem;
   color: variables.$main-txt__color;
-  line-height: 1.3;
+  line-height: 1.5;
 }
 
 .link {
   cursor: pointer;
+  color: variables.$main-txt__color;
 }
 
 //横並び左揃えにします

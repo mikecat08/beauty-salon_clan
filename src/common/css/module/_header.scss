@@ -9,8 +9,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: variables.$bg__color;
-  z-index: 10;
+  background: variables.$bg__color;
+  z-index: 20;
 
   @include mixin.sp {
     display: none;
@@ -18,13 +18,13 @@
 
   .header_inner {
     height: 65px;
-    margin-left: 30px;
+    margin-left: 50px;
     align-items: center;
     justify-content: space-between;
 
     // ヘッダーロゴ
     .header-logo_wrapper {
-      width: 70px;
+      width: 64px;
 
       .link {
         display: block;
@@ -70,6 +70,8 @@
             align-items: center;
             background-color: variables.$reserve-btn__color;
             color: variables.$accent-txt__color;
+            font-family: 'Noto Serif JP', serif;
+            font-weight: bold;
           }
         }
 
@@ -107,26 +109,33 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: variables.$bg__color;
-  z-index: 10;
+  z-index: 20;
+  transition: all 0.1s linear;
 
   @include mixin.pc {
     display: none;
   }
 
+  &.bg-white {
+    background-color: variables.$bg__color;
+  }
+
   .header_inner {
-    height: 60px;
+    height: 70px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
 
     // ハンバーガーボタン
     .burger-btn_container {
-      width: 60px;
-      height: 100%;
+      width: 70px;
+      height: 70px;
       padding: 12px;
       flex-shrink: 0;
-      margin-left: 8px;
       cursor: pointer;
+      background: variables.$bg__color;
+      position: absolute;
+      top: 0;
+      right: 0;
 
       .burger-btn {
         height: 100%;
@@ -140,17 +149,17 @@
           position: absolute;
 
           &.bar_top {
-            top: 0;
+            top: 3px;
             left: 0;
           }
 
           &.bar_middle {
-            top: 8px;
+            top: 12px;
             left: 0;
           }
 
           &.bar_bottom {
-            bottom: 18px;
+            bottom: 22px;
             left: 0;
           }
         }
@@ -158,39 +167,77 @@
         .burger-btn_txt {
           width: 100%;
           text-align: center;
-          font-size: 0.4rem;
+          font-size: 1.2rem;
           position: absolute;
           bottom: 0;
           left: 0;
+          &.close {
+            display: none;
+          }
+        }
+      }
+
+      &.opened {
+        .burger-btn {
+          .bar {
+            &.bar_top {
+              top: 10px;
+              transform: rotate(30deg);
+              transition: transform 0.1s linear;
+            }
+  
+            &.bar_middle {
+              display: none;
+            }
+  
+            &.bar_bottom {
+              top: 10px;
+              transform: rotate(-30deg);
+              transition: transform 0.1s linear;
+            }
+          }
+          .burger-btn_txt {
+            &.close {
+              display: inline;
+            }
+            &.menu {
+              display: none;
+            }
+          }
         }
       }
     }
 
     // ハンバーガーボタンはここまで
 
-    // ヘッダーロゴ
-    .header-logo_wrapper {
-      width: 48px;
-
-      .link {
-        display: block;
-        height: 100%;
-      }
-    }
-
-    // ヘッダーロゴはここまで
-
     // 予約ボタン
     .reserve-btn_wrapper {
-      padding: 0 10px;
       background-color: variables.$reserve-btn__color;
-      height: 100%;
+      width: 70px;
+      height: 70px;
       display: flex;
       cursor: pointer;
+      position: absolute;
+      top: 0;
+      right: 70px;
 
       .reserve-btn {
+        width: 100%;
+        padding: 10px 14px;
         color: variables.$accent-txt__color;
         align-items: center;
+        font-family: 'Noto Serif JP', serif;
+        display: flex;
+        flex-direction: column;
+        font-size: 1.2rem;
+        &::before {
+          content: '';
+          display: block;
+          width: 30px;
+          height: 30px;
+          margin-bottom: 2px;
+          background: url(/common/img/icon_reserve_white.png) center/contain no-repeat;
+        }
       }
     }
 
@@ -227,21 +274,43 @@
         //予約ボタン
         .reserve_wrapper {
           margin-top: 30px;
-          height: 40px;
-          margin-right: 20px;
+          height: 44px;
+          margin-right: 22px;
 
           .reserve-btn_wrapper {
             background-color: variables.$reserve-btn__color;
-            width: 100px;
             height: 100%;
             margin: 0 auto;
             text-align: center;
+            padding: 0 15px 0 22px;
 
             .reserve-btn {
               color: variables.$accent-txt__color;
               padding: 0;
               width: 100%;
               height: 100%;
+              font-family: 'Noto Serif JP', serif;
+              font-weight: bold;
+              display: flex;
+              align-items: center;
+              
+              &::before {
+                display: block;
+                content: '';
+                background: url(/common/img/icon_reserve_white.png) center/contain no-repeat;
+                width: 24px;
+                height: 24px;
+                margin: 2px 4px 0 0;
+              }
+
+              &::after {
+                content: '';
+                display: block;
+                background: url(/common/img/rightArrow_white.png) center/contain no-repeat;
+                width: 28px;
+                height: 18px;
+                margin-left: 8px;
+              }
             }
           }
         }
@@ -256,11 +325,11 @@
             justify-content: center;
 
             .sns-icon_list-item {
-              width: 40px;
-              height: 40px;
+              width: 44px;
+              height: 44px;
 
               &:first-child {
-                margin-right: 20px;
+                margin-right: 22px;
               }
 
               &.line-icon {
@@ -268,7 +337,7 @@
               }
 
               &.instagram-icon {
-                background-color: variables.$instagram-bland__color;
+                background-color: variables.$instagram-btn__color;
 
                 .link {
                   display: flex;
