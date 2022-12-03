@@ -30,14 +30,14 @@
     rel="stylesheet">
   <!-- Googleフォントの読み込みはここまで -->
 
+  <!-- swiperのCSS読み込み -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <!-- swiperのCSS読み込みはここまで -->
+
   <!-- 基本的なCSSの読み込み -->
   <link rel="stylesheet" type="text/css" href="/common/css/all.css">
   <link rel="stylesheet" type="text/css" href="/css/top.css">
   <!-- 基本的なCSSの読み込みはここまで -->
-
-  <!-- swiperのCSS読み込み -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-  <!-- swiperのCSS読み込みはここまで -->
 
 </head>
 
@@ -49,11 +49,26 @@
   <div class="video_layer"></div>
 
   <!-- 背景の動画 -->
-  <div class="video_wrapper">
+  <!-- <div class="video_wrapper">
     <div class="video_container">
       <video src="/img/clan__mv_test.mp4" class="bg-video" id="bg-video" playsinline autoplay muted loop></video>
     </div>
+  </div> -->
+  <!-- 背景の動画はここまで -->
+
+  <!-- 背景のスライドショー -->
+  <div class="swiper mv-swiper">
+    <div class="swiper-wrapper">
+      <!-- スライド -->
+      <div class="swiper-slide"></div>
+      <div class="swiper-slide"></div>
+      <div class="swiper-slide"></div>
+      <div class="swiper-slide"></div>
+      <div class="swiper-slide"></div>
+      <!-- スライドはここまで -->
+    </div>
   </div>
+  <!-- 背景のスライドショーはここまで -->
 
   <!-- ドロップダウン展開時の背景デザイン用要素 -->
   <div id="dark-mask" class="dark-mask"></div>
@@ -125,7 +140,7 @@
             </h2>
 
             <!-- swiper -->
-            <div class="swiper">
+            <div class="swiper style-swiper">
               <div class="swiper-wrapper">
                 <!-- スライド -->
                 <div class="swiper-slide">
@@ -164,11 +179,11 @@
 
             <div class="swiper-nav-container">
               <!-- 左向きナビボタン -->
-              <div class="swiper-button-prev"></div>
+              <div class="style-swiper-button-prev swiper-button-prev"></div>
               <!-- ページネーション -->
-              <div class="swiper-pagination"></div>
+              <div class="style-swiper-pagination swiper-pagination"></div>
               <!-- 右向きナビボタン -->
-              <div class="swiper-button-next"></div>
+              <div class="style-swiper-button-next swiper-button-next"></div>
             </div>
             <!-- swiperはここまで -->
           </div>

@@ -1,11 +1,33 @@
 $(function () {
 
   //=====================================
-  //swiperの設定
+  //メインビジュアルのswiper設定
+  //=====================================
+  const mvSwiper = new Swiper (".mv-swiper", {
+    
+    effect: 'fade',
+
+    // スライドが切り替わるスピード
+    speed: 2000,
+
+    // 自動再生の設定
+    autoplay: {
+
+      // スライド切り替わりの間隔
+      delay: 4000,
+
+      // スライド操作中は自動再生が停止する設定
+      disableOnInteraction: true,
+    },
+  });
+
+
+  //=====================================
+  //スタイルセクションのswiper設定
   //=====================================
 
   // swiperの初期化
-  const swiper = new Swiper(".swiper", {
+  const styleSwiper = new Swiper(".style-swiper", {
 
     // ループ設定
     loop: true,
@@ -34,14 +56,14 @@ $(function () {
     
     // ページネーションのオプション設定
     pagination: {
-      el: ".swiper-pagination",
+      el: ".style-swiper-pagination",
       clickable: true
     },
 
     // ナビボタンの設定
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev"
+      nextEl: ".style-swiper-button-next",
+      prevEl: ".style-swiper-button-prev"
     },
 
     // ブレイクポイント
