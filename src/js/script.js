@@ -60,12 +60,6 @@ $(function () {
       clickable: true
     },
 
-    // ナビボタンの設定
-    navigation: {
-      nextEl: ".style-swiper-button-next",
-      prevEl: ".style-swiper-button-prev"
-    },
-
     // ブレイクポイント
     breakpoints: {
       484: {
