@@ -291,13 +291,10 @@
             .swiper-pagination {
               position: static;
               height: 100%;
-              width: 100%;
+              width: 80%;
               margin: 0 30px;
               display: flex;
               align-items: center;
-              @include mixin.sp {
-                width: 80%;
-              }
 
               .swiper-pagination-bullet {
                 width: calc(100% / 6);
