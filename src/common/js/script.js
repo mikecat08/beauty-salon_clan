@@ -44,8 +44,10 @@ $(function () {
       $burgerBtn.removeClass('opened');
       //アコーディオンメニューをスライドアップで非表示にします。
       $burgerMenu.slideUp();
-      //予約ボタンの不透明度を1にします。
-      $('#reserve-btn').css('opacity', '1');
+      //予約ボタンを表示します。
+      $('#reserve-btn').css('display', 'flex');
+      // ロゴを非表示にします。
+      $('#sp_logo').css('display', 'none');
       //暗くなっている背景を元に戻す目的で、bgというidを持つ要素からactiveというクラスを取り除きます。
       $('#dark-mask').removeClass('active');
       //ヘッダーの背景色を透過に戻します。
@@ -58,8 +60,10 @@ $(function () {
       $burgerBtn.addClass('opened');
       //ハンバーガーメニューをスライドダウンで表示させます。
       $burgerMenu.slideDown();
-      //予約ボタンの不透明度を0にします。
-      $('#reserve-btn').css('opacity', '0');
+      //予約ボタンを非表示にします。
+      $('#reserve-btn').css('display', 'none');
+      // ロゴを表示します。
+      $('#sp_logo').css('display', 'block');
       //背景を暗くする目的で、bgというidを持つ要素にactiveというクラスを付与します。
       $('#dark-mask').addClass('active');
       //ヘッダーの背景色を白色にします。

@@ -124,6 +124,17 @@
     height: 70px;
     align-items: center;
     justify-content: flex-end;
+    position: relative;
+
+    // CLANのロゴ
+    .header-logo_wrapper {
+      width: 65px;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: none;
+    }
 
     // ハンバーガーボタン
     .burger-btn_container {
@@ -132,7 +143,7 @@
       padding: 12px;
       flex-shrink: 0;
       cursor: pointer;
-      background: variables.$bg__color;
+      background: variables.$instagram-btn__color;
       position: absolute;
       top: 0;
       right: 0;
@@ -145,7 +156,7 @@
           display: block;
           width: 100%;
           height: 2px;
-          background-color: variables.$instagram-btn__color;
+          background-color: variables.$accent-txt__color;
           position: absolute;
 
           &.bar_top {
@@ -166,10 +177,11 @@
 
         .burger-btn_txt {
           width: 100%;
+          color: variables.$accent-txt__color;
           text-align: center;
           font-size: 1.2rem;
           position: absolute;
-          bottom: 0;
+          bottom: -2px;
           left: 0;
           &.close {
             display: none;
@@ -178,8 +190,10 @@
       }
 
       &.opened {
+        background: variables.$bg__color;
         .burger-btn {
           .bar {
+            background-color: variables.$instagram-btn__color;
             &.bar_top {
               top: 10px;
               transform: rotate(30deg);
@@ -197,6 +211,7 @@
             }
           }
           .burger-btn_txt {
+            color: variables.$instagram-btn__color;
             &.close {
               display: inline;
             }
@@ -207,8 +222,6 @@
         }
       }
     }
-
-    // ハンバーガーボタンはここまで
 
     // 予約ボタン
     .reserve-btn_wrapper {
@@ -240,9 +253,6 @@
         }
       }
     }
-
-    // 予約ボタンはここまで
-
   }
 
   // ハンバーガーメニュー
@@ -260,7 +270,7 @@
           padding-bottom: 8px;
 
           &:first-child {
-            margin-top: 45px;
+            margin-top: 5px;
           }
         }
       }
